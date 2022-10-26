@@ -1,0 +1,22 @@
+/*
+todo: grab the css from Honey Rae' and refactor for PomoDoIt (for visibility)
+todo: syle this teh way it should look
+*/
+
+.navbar {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+    justify-content: left;
+    border: 2px dotted black;
+}
+
+.navbar__item {
+    flex-basis: 20%;
+    list-style-type: none;
+}
+
+.navbar__logout {
+    margin-left: auto;
+}
+
