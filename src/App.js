@@ -1,3 +1,9 @@
+/*
+todo: iimport the login component 
+todo: refactor the rendering function to accept the app route
+*/
+
+
 import logo from './logo.svg';
 import './App.css';
 
@@ -22,4 +28,4 @@ function App() {
   );
 }
 
-export default App;
+export default App; 
