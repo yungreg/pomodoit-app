@@ -14,7 +14,7 @@ export const NavBar = () => {
         <ul className="navbar">
             <li className="navbar__item active">
             
-                <Link className="navbar__link" to="/mySessions">My Sessions</Link>
+                <Link className="navbar__link" to="/MySessions">My Sessions</Link>
 
                 <Link className="navbar__link" to="/timer"><img src="https://www.fillmurray.com/640/360"
                 alt="Placeholder image fopr the logo " width="200" height="150" />
