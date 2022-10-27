@@ -30,7 +30,7 @@ export const Register = (props) => {
                         id: createdUser.id,
                     }))
 
-                    navigate("/")
+                    navigate("/login")
                 }
             })
     }

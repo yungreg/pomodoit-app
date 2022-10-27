@@ -42,8 +42,6 @@ export const Login = () => {
         <main className="container--login">
             <section>
                 <form className="form--login" onSubmit={handleLogin}>
-                    <h1>Welcome to PomoDoIt!</h1>
-                    <h2>✨PomoDoIt until it’s PomoDone!✨</h2>
                     <h3>Please sign in to get started!</h3>
                     <fieldset>
                         <label htmlFor="inputEmail">  </label>

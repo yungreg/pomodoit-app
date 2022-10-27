@@ -3,10 +3,9 @@ todo: grab the css from Honey Rae' and refactor for PomoDoIt (for visibility)
 todo: syle this teh way it should look
 */
 
-.navbar {
+.navbar_list {
     display: flex;
     flex-wrap: nowrap;
-    flex-direction: column;
     justify-content: left;
     border: 2px dotted black;
 }

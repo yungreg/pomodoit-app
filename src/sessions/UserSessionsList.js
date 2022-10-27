@@ -34,8 +34,8 @@ export const UserSessionsList = () => {
                     <></>
                     Task Type: {session.taskType.type} <br/>
                     Difficulty Level: {session.taskDifficulty.difficulty}<br/>
-                    Completed: {session.isCompleted.toString()}<br/> 
                     Task Description: {session.taskDescription}<br/>
+                    Completed: {session.isCompleted.toString()}<br/> 
                     </section>
             })
         }
