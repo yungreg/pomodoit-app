@@ -3,7 +3,7 @@ todo: creaste a form component for teh timer page
 todo: imclude input field, two select fields, and one checkbox for the boolean
 todo: fetch teh initial state of userPomos
 todo: match user ids to be able to display only the sessions for eth signed in user //!use user id 1 from users test this!
-
+todo: create a reset button to make sure the form clears
 */ 
 
 
@@ -25,12 +25,15 @@ export const TaskForm = () => {
     //  TODO*: Use the useNavigate() hook so you can redirect the user back to the timer
     const navigate = useNavigate()
 
+    //^ the two lines below are needed to populate a user id when sent to the API for storage
     const localPomoUser = localStorage.getItem("pomo_user")
     const pomoUserObject = JSON.parse(localPomoUser)
 
+    
+        // TODO*: Create the object to be saved to the API
     //! this needs refactoring bfore it can be called:
     const handleSaveButtonClick = (event) => {
-        event.preventDefault();
+        // event.preventDefault(); //!removed this to refresh the page on submission
       //   console.log("YOU DIED");
         const userSessionToStoreInAPI = {
           userId: pomoUserObject.id,
@@ -40,15 +43,9 @@ export const TaskForm = () => {
           isCompleted: taskEntry.isCompleted,
         };
         //^ this is the template for info that'll get sent to teh API
-        // TODO*: Create the object to be saved to the API
-        /*
-          "id": 1,
-      "userId": 0,
-      "description": "",
-      "emergency": false,
-      "dateCompleted": ""
-          */
-        // TODO: Perform the fetch() to POST the object to the API
+
+
+        //* TODO: Perform the fetch() to POST the object to the API
         return fetch(`http://localhost:8088/userSessions`, {
           method: "POST",
           headers: {
@@ -135,14 +132,20 @@ export const TaskForm = () => {
                         }} />
                 </div>
             </fieldset>
-            <button className="btn btn-primary"
+            <button className="btn btn-savesession"
             onClick={
                 (click) =>{
-                    handleSaveButtonClick(click) //!call me when input form's button post is completed;
+                    handleSaveButtonClick(click) 
+                    //*call me when input form's button post is completed;
                 }
             }>
-                Submit Session!
+                Submit Session & Refresh Timer!
             </button>
+            {/* <button className="btn btn-primary">
+            <input type="reset" value="HTML Reset Form"/>
+            <input type="button" value="Reset Form" onClick={() => resetForm()}/>
+                Reset Session!
+            </button> */}
         </form>
     )
 }
