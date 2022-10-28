@@ -7,7 +7,7 @@ todo: import navbar css
 import { Link, useNavigate } from "react-router-dom"
 import "./NavBar.css"
 
-export const NavBar = () => {
+export const NavBar2 = () => {
     const navigate = useNavigate()
 
     return (
@@ -15,10 +15,10 @@ export const NavBar = () => {
             <li className="navbar__item active">
             
                 <Link className="navbar__link" to="/login">Log In</Link>
-                <Link className="navbar__link" to="/mySessions">My Sessions</Link>
-
-                <Link className="navbar__link" to="/timer"> Timer (logo image here)
+                <Link className="navbar__link" to="/login"> Timer (logo image here)
                 </Link>
+                <Link className="navbar__link" to="/register">Register!</Link>
+
                
             </li>
             {
@@ -26,8 +26,8 @@ export const NavBar = () => {
                     ? <li className="navbar__item navbar__logout">
                         <Link className="navbar__link" to="" onClick={() => {
                             localStorage.removeItem("pomo_user")
-                            navigate("/login",)
-                        }}>Logout</Link>
+                            navigate("/register",)
+                        }}>Register</Link>
                     </li>
                     : ""
             }

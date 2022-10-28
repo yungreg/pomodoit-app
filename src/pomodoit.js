@@ -10,26 +10,29 @@ import { Route, Routes } from "react-router-dom"
 import { Login } from "./auth/Login"
 import logo from './logo.svg';
 import './App.css';
-import { NavBar } from "./navbar/NavBar";
+import { NavBar1 } from "./navbar/NavBar1";
 import { UserSessionsList } from "./sessions/UserSessionsList";
 import { TaskForm } from "./taskform/TaskForm";
 import { AppViews } from "./appviews/AppViews";
 import { Authorized } from "./auth/Authorized";
+import { NavBar2 } from "./navbar/NavBar2";
+import { EditSessionsForm } from "./sessions/SessionEditor";
 
 export const Pomodoit = () => {
 	return <Routes>
     {/* routed this way so the Navbar toggles the logout option depending on the login status. */}
-		<Route path="/login" element={<><NavBar/><Login /></>} /> 
-		<Route path="/" element={<><NavBar/><Login /></>} />
+		<Route path="/login" element={<><NavBar2/><Login /></>} /> 
+		<Route path="/" element={<><NavBar2/><Login /></>} />
 		<Route path="/register" element={<Register />} />
+		<Route path="/timer" element={<TaskForm />} />
+		<Route path="/mySessions" element={<><UserSessionsList/><EditSessionsForm/></>} />
 
 		<Route path="*" element={
 			
       <Authorized>
 				<>
-          <NavBar />
-				  <AppViews />
-				  <TaskForm />
+          			<NavBar1 />
+				  <AppViews />				
 				</>
 			</Authorized>
 
@@ -38,7 +41,7 @@ export const Pomodoit = () => {
 };
 
 
-{/* <Route path="/navbar" element={<NavBar/>} /> */}
+{/* <Route path="/navbar" element={<NavBar1/>} /> */}
 
 
 // <Routes>

@@ -141,11 +141,7 @@ export const TaskForm = () => {
             }>
                 Submit Session & Refresh Timer!
             </button>
-            {/* <button className="btn btn-primary">
-            <input type="reset" value="HTML Reset Form"/>
-            <input type="button" value="Reset Form" onClick={() => resetForm()}/>
-                Reset Session!
-            </button> */}
+
         </form>
     )
 }
