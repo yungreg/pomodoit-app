@@ -9,13 +9,14 @@ todo, you'll need a useeffect o filter through what tckets to show per user
 
 
 import { useEffect, useState } from "react"
+import "./UserSessionsList.css"
 
 
 export const UserSessionsList = () => {
     const [sessions, setSessions] = useState([])
     //^idea: put your filter in the useEffect to be able to show JUST the pomo for a specific user. 
-    const [filteredSessions, setFilteredSessions] = useState([])
-
+    // const [filteredSessions, setFilteredSessions] = useState([])
+    
 // todo*: create some new user id entries in yoru database to test this
 
     const localPomoUser = localStorage.getItem("pomo_user")
@@ -27,22 +28,32 @@ export const UserSessionsList = () => {
             .then(res => res.json())
             .then((sessionsArray) => {
                 setSessions(sessionsArray)
+                // console.log(sessions)
             })
         },
         [] // When this array is empty, you are observing initial component state
     )
 
-    //^ this one will watch sessions a user's info,. than match that info with teh right user id, and pull that info from storage. //! Jacob showed me like 26: hwo to just interpolate the users ID into teh fetch call, so that you don't have to do this second useEffect!  Smart!
-    // useEffect(
-    //     () => {
-    //     if(sessions.userId === pomoUserObject.id){
-    //         const userFilteredSessions = sessions.filter(session => session.userId === pomoUserObject.id)
-    //         setFilteredSessions(userFilteredSessions)
-       
-    //     }
-    //     },
-    //     [sessions, setFilteredSessions, pomoUserObject]
-    // )
+    //^ this one will watch sessions a user's info,. than match that info with teh right user id, and pull that info from storage. 
+    //* Jacob showed me line 26: hwo to just interpolate the users ID into teh fetch call, so that you don't have to do this second useEffect!  Smart!
+
+
+    const deleteButton = () => {
+        // if (sessions.userId === pomoUserObject.id) {
+            return <button onClick={()=>{
+                fetch(
+                    `http://localhost:8088/userSessions/?userId=${pomoUserObject.id}&id=${sessions.id}`, { 
+                        method: "DELETE"
+                    }
+                  )
+                    .then(response => response.json)
+                    .then(() => {
+                    
+                    });
+            }} className="session__btn-delete">Delete Session?</button>
+        // }
+    }
+//! think about splitting these sessions into their own component, to be able to control it as it ghets bigger. liek this video:  
 
     return <>
         <section className="sessionsList">
@@ -55,7 +66,9 @@ export const UserSessionsList = () => {
                     Difficulty Level: {session.taskDifficulty.difficulty}<br/>
                     Task Description: {session.taskDescription}<br/>
                     Completed: {session.isCompleted.toString()}<br/> 
+                    {deleteButton()} 
                     </section>
+                   
             })
         }
     </section>

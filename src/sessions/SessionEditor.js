@@ -37,7 +37,7 @@ export const EditSessionsForm = () => {
     const pomoUserObject = JSON.parse(localPomoUser)
 
     const handleSaveButtonClick = (event) => {
-        event.preventDefault(); 
+        // event.preventDefault(); 
         return fetch(`http://localhost:8088/userSessions/${editedTask.id}`, {
             method: "PUT",
             headers: {
@@ -47,12 +47,12 @@ export const EditSessionsForm = () => {
         })
         .then(res => res.json())
         .then(() => {
-
+            //what goes here?
         })
     }
     return (
         <form className="editSessionForm">
-        <h2 className="editSessionForm__title">What did you want to get done?</h2>
+        <h2 className="editSessionForm__title">Need  to edit details? Edit your session here: </h2>
             {/* put two selects here */}
             <fieldset>
                 <label> Task Difficulty: </label>
