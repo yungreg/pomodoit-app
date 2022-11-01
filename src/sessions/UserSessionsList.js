@@ -9,6 +9,7 @@ todo, you'll need a useeffect o filter through what tckets to show per user
 
 
 import { useEffect, useState } from "react"
+import { SessionSections } from "./Sessions"
 import "./UserSessionsList.css"
 
 
@@ -22,7 +23,10 @@ export const UserSessionsList = () => {
     const localPomoUser = localStorage.getItem("pomo_user")
     const pomoUserObject = JSON.parse(localPomoUser)
 // ^ this iks hpow you will match the user object to their sessions.
-    useEffect(
+    
+//mak ethis a function called deleteButton() to refresh initial tix state, then pass that named fn to UserSessionsList aS A PROP
+
+useEffect(
         () => {
             fetch(`http://localhost:8088/userSessions/?userId=${pomoUserObject.id}&_expand=user&_expand=taskType&_expand=taskDifficulty`)
             .then(res => res.json())
@@ -37,40 +41,25 @@ export const UserSessionsList = () => {
     //^ this one will watch sessions a user's info,. than match that info with teh right user id, and pull that info from storage. 
     //* Jacob showed me line 26: hwo to just interpolate the users ID into teh fetch call, so that you don't have to do this second useEffect!  Smart!
 
-
-    const deleteButton = () => {
-        // if (sessions.userId === pomoUserObject.id) {
-            return <button onClick={()=>{
-                fetch(
-                    `http://localhost:8088/userSessions/?userId=${pomoUserObject.id}&id=${sessions.id}`, { 
-                        method: "DELETE"
-                    }
-                  )
-                    .then(response => response.json)
-                    .then(() => {
-                    
-                    });
-            }} className="session__btn-delete">Delete Session?</button>
-        // }
-    }
+//?10.31.22 do i need optional chiaining int teh delete button to get the sessions key? it helps you acces nested properties, and teh initial request is nested... it should run even tho sessions comed back undefinied
+    
 //! think about splitting these sessions into their own component, to be able to control it as it ghets bigger. liek this video:  
-
+//todo*: pass delete button into SessionSections as a prop, so you can use it in the other module
     return <>
         <section className="sessionsList">
         {
-            sessions.map((session) => {
-                return <section key={session.id} className="sessionListItem"> 
-                    <h2>Here's your sessions, {session.user.fullName}!</h2>
-                    <></>
-                    Task Type: {session.taskType.type} <br/>
-                    Difficulty Level: {session.taskDifficulty.difficulty}<br/>
-                    Task Description: {session.taskDescription}<br/>
-                    Completed: {session.isCompleted.toString()}<br/> 
-                    {deleteButton()} 
-                    </section>
-                   
-            })
-        }
+            sessions.map(session => <SessionSections 
+                key={`session--${session.id}`}
+                id={session.id}
+                taskType={session.taskType?.type}
+                taskDifficulty={session.taskDifficulty?.difficulty}
+                taskDescription={session.taskDescription}
+                isCompleted={session.isCompleted.toString()}
+                session={session}
+            />) 
+               
+        } 
     </section>
     </>
 }
+//! i don't know wher eto put thias show that it shows up once *<h2>Here's your sessions, {sessions.user.fullName}!</h2>

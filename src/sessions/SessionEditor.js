@@ -7,6 +7,8 @@ todo: Figure out how to make an edit button next to every listing
 */
 
 import { useEffect, useState } from "react"
+import { useNavigate } from "react-router-dom"
+
 
 export const EditSessionsForm = () => {
     //set up initial staste
@@ -18,7 +20,9 @@ export const EditSessionsForm = () => {
           userId: 0
         })
     
-        
+        const navigate = useNavigate()
+
+        //this fetch saves teh entries to teh API 
         useEffect(
           () => {
             fetch(
@@ -37,8 +41,8 @@ export const EditSessionsForm = () => {
     const pomoUserObject = JSON.parse(localPomoUser)
 
     const handleSaveButtonClick = (event) => {
-        // event.preventDefault(); 
-        return fetch(`http://localhost:8088/userSessions/${editedTask.id}`, {
+        event.preventDefault(); 
+        return fetch(`http://localhost:8088/userSessions/?id=${editedTask.id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -47,7 +51,7 @@ export const EditSessionsForm = () => {
         })
         .then(res => res.json())
         .then(() => {
-            //what goes here?
+            navigate("/mySessions")
         })
     }
     return (
