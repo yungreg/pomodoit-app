@@ -20,7 +20,8 @@ export const Pomodoit = () => {
 	return <Routes>
     {/* routed this way so the Navbar toggles the logout option depending on the login status. */}
 		<Route path="/login" element={<><NavBar1/><Login /></>} /> 
-		<Route path="/" element={<><Login /></>} />
+		<Route path="/" element={<><NavBar1/><Login /></>} />
+		<Route path="/register" element={<Register />} />
 		
 
 		<Route path="*" element={
@@ -36,17 +37,3 @@ export const Pomodoit = () => {
 	</Routes>
 };
 
-
-{/* <Route path="/navbar" element={<NavBar1/>} /> */}
-
-
-// <Routes>
-     
-// <Route index path="/" element={<Login />} />
-// <Route path="/register" element={<Register />} />
-// <Route path="/mySessions" element={<UserSessionsList/> } />
-// <Route path="/timer" element={<TaskForm /> } />
-// 
-
-
-// </Routes>
