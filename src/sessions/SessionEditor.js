@@ -7,6 +7,8 @@ todo: Figure out how to make an edit button next to every listing
 */
 
 import { useEffect, useState } from "react"
+import { useNavigate, useParams } from "react-router-dom"
+
 
 export const EditSessionsForm = () => {
     //set up initial staste
@@ -18,27 +20,26 @@ export const EditSessionsForm = () => {
           userId: 0
         })
     
-        
+        const navigate = useNavigate()
+        const {id} = useParams() 
+
+        //this fetch saves teh entries to teh API 
         useEffect(
           () => {
             fetch(
-              `http://localhost:8088/userSessions/?userId=${pomoUserObject.id}`
+              `http://localhost:8088/userSessions/${id}`
             )
               .then((res) => res.json())
               .then((input) => {
-                const userUpdatedSession = input[0]
+                const userUpdatedSession = input
                 setEditedTask(userUpdatedSession)
               });
           },
           [] // When this array is empty, you are observing initial component state
         );
 
-    const localPomoUser = localStorage.getItem("pomo_user")
-    const pomoUserObject = JSON.parse(localPomoUser)
-
     const handleSaveButtonClick = (event) => {
-        event.preventDefault(); 
-        return fetch(`http://localhost:8088/userSessions/${editedTask.id}`, {
+        return fetch(`http://localhost:8088/userSessions/${id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -47,12 +48,12 @@ export const EditSessionsForm = () => {
         })
         .then(res => res.json())
         .then(() => {
-
+            navigate("/mySessions")
         })
     }
     return (
         <form className="editSessionForm">
-        <h2 className="editSessionForm__title">What did you want to get done?</h2>
+        <h2 className="editSessionForm__title">Need  to edit details? Edit your session here: </h2>
             {/* put two selects here */}
             <fieldset>
                 <label> Task Difficulty: </label>
@@ -97,8 +98,8 @@ export const EditSessionsForm = () => {
                         required autoFocus
                         type="text"
                         className="form-control"
-                        placeholder="Describe the task here!"
-                        value={editedTask.taskDescription}
+                        // placeholder="Describe the task here!"
+                        value={editedTask?.taskDescription}
                         onChange={
                             (changeEvent) => {
                                 const copy = {...editedTask}
@@ -114,7 +115,7 @@ export const EditSessionsForm = () => {
                     <label htmlFor="name">Check if you completed the task!</label>
                     <input type="checkbox"
                         //! <--this onclick may not work. keep an eye on it in CDT 
-                        value={editedTask.isCompleted}
+                        value={editedTask?.isCompleted}
                         onChange={
                             (changeEvent) => {
                             const copy = {...editedTask}
