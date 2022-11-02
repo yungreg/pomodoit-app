@@ -26,7 +26,7 @@ export const Pomodoit = () => {
 		<Route path="/register" element={<Register />} />
 		<Route path="/timer" element={<><TaskForm /></>} />
 		<Route path="/mySessions" element={<><UserSessionsList/> </>} />
-		<Route path="/mySessions/:id/edit" element={<EditSessionsForm/>} />
+		<Route path="/mySessions/:id" element={<EditSessionsForm />} />
 
 		<Route path="*" element={
 			

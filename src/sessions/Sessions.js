@@ -5,7 +5,7 @@
 *todo: make the task number display bbecome a link to tak eyou to the edit screen where yoj can edid individual  tasks
 */
 
-import { Link, useParams, } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const SessionSections = ({ id, session, taskType, taskDifficulty, taskDescription, isCompleted }) => {
 
@@ -26,7 +26,7 @@ export const SessionSections = ({ id, session, taskType, taskDifficulty, taskDes
     
     return <>
     <section className="sessionListItem"> 
-    <Link to={`/mySessions/${id}/edit`}>Task Number: {id}</Link><br/>
+    <Link to={`/mySessions/${id}`}> Task Number: {id}</Link><br/>
     Task Type: {taskType} <br/>
     Difficulty Level: {taskDifficulty}<br/>
     Task Description: {taskDescription}<br/>

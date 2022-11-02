@@ -7,7 +7,7 @@ todo: Figure out how to make an edit button next to every listing
 */
 
 import { useEffect, useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { useNavigate, useParams } from "react-router-dom"
 
 
 export const EditSessionsForm = () => {
@@ -21,28 +21,25 @@ export const EditSessionsForm = () => {
         })
     
         const navigate = useNavigate()
+        const {id} = useParams() 
 
         //this fetch saves teh entries to teh API 
         useEffect(
           () => {
             fetch(
-              `http://localhost:8088/userSessions/?userId=${pomoUserObject.id}`
+              `http://localhost:8088/userSessions/${id}`
             )
               .then((res) => res.json())
               .then((input) => {
-                const userUpdatedSession = input[0]
+                const userUpdatedSession = input
                 setEditedTask(userUpdatedSession)
               });
           },
           [] // When this array is empty, you are observing initial component state
         );
 
-    const localPomoUser = localStorage.getItem("pomo_user")
-    const pomoUserObject = JSON.parse(localPomoUser)
-
     const handleSaveButtonClick = (event) => {
-        event.preventDefault(); 
-        return fetch(`http://localhost:8088/userSessions/?id=${editedTask.id}`, {
+        return fetch(`http://localhost:8088/userSessions/${id}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"
@@ -101,8 +98,8 @@ export const EditSessionsForm = () => {
                         required autoFocus
                         type="text"
                         className="form-control"
-                        placeholder="Describe the task here!"
-                        value={editedTask.taskDescription}
+                        // placeholder="Describe the task here!"
+                        value={editedTask?.taskDescription}
                         onChange={
                             (changeEvent) => {
                                 const copy = {...editedTask}
@@ -118,7 +115,7 @@ export const EditSessionsForm = () => {
                     <label htmlFor="name">Check if you completed the task!</label>
                     <input type="checkbox"
                         //! <--this onclick may not work. keep an eye on it in CDT 
-                        value={editedTask.isCompleted}
+                        value={editedTask?.isCompleted}
                         onChange={
                             (changeEvent) => {
                             const copy = {...editedTask}
