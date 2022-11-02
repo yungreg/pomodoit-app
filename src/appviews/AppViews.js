@@ -37,7 +37,7 @@ export const AppViews = () => {
 		    {/* teh code below is very weird but works..? there has to be a better solution than this. */}
         <Route path="/timer" element={<><Timer initialTime={1500000} startImmediately={false}
         direction={"backward"}
-    
+      
     >
         {({ start, pause, reset }) => (
             <>
