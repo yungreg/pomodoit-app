@@ -3,6 +3,8 @@
 *todo: refactor the rendering function
 *todo: import AuthorizATION 
 *todo: import NavBaR/ PASS IT IN AS PROP
+todo: add logout route which sends you back to login
+todo: 
 */
 
 import { Register } from "./auth/Register";
@@ -11,29 +13,22 @@ import { Login } from "./auth/Login"
 
 import './App.css';
 import { NavBar1 } from "./navbar/NavBar1";
-import { UserSessionsList } from "./sessions/UserSessionsList";
-import { TaskForm } from "./taskform/TaskForm";
 import { AppViews } from "./appviews/AppViews";
 import { Authorized } from "./auth/Authorized";
-import { NavBar2 } from "./navbar/NavBar2";
-import { EditSessionsForm } from "./sessions/SessionEditor";
 
 export const Pomodoit = () => {
 	return <Routes>
     {/* routed this way so the Navbar toggles the logout option depending on the login status. */}
-		<Route path="/login" element={<><NavBar2/><Login /></>} /> 
-		<Route path="/" element={<><NavBar2/><Login /></>} />
-		<Route path="/register" element={<Register />} />
-		<Route path="/timer" element={<><TaskForm /></>} />
-		<Route path="/mySessions" element={<><UserSessionsList/> </>} />
-		<Route path="/mySessions/:id" element={<EditSessionsForm />} />
+		<Route path="/login" element={<><NavBar1/><Login /></>} /> 
+		<Route path="/" element={<><Login /></>} />
+		
 
 		<Route path="*" element={
 			
       <Authorized>
 				<>
-          			<NavBar1 />
-				  <AppViews />				
+          		<NavBar1 />
+				<AppViews />				
 				</>
 			</Authorized>
 
