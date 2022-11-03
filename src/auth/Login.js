@@ -41,6 +41,10 @@ export const Login = () => {
     return (
         <main className="container--login">
             <section>
+              <div className="welcome_message">
+                <h1 >Welcome to PomoDoIt!</h1>
+                <h2>✨PomoDoIt until it’s PomoDone!✨</h2>
+              </div>
                 <form className="form--login" onSubmit={handleLogin}>
                     <h3>Please sign in to get started!</h3>
                     <fieldset>
@@ -49,18 +53,18 @@ export const Login = () => {
                             value={email}
                             onChange={evt => set(evt.target.value)}
                             className="form-control"
-                            placeholder="Please enter email address you signed up with:"
+                            placeholder="Please enter email address you signed up with here:"
                             required autoFocus />
                     </fieldset>
                     <fieldset>
-                        <button type="submit">
+                        <button className="button--login"type="submit">
                             Log in!
                         </button>
                     </fieldset>
                 </form>
             </section>
-            <section className="button--register">
-               <button>
+            <section >
+               <button className="button--register">
                 <Link to="/register">Not Signed up yet?</Link>
                </button>
             </section>

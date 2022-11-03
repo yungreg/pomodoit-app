@@ -40,7 +40,7 @@ export const AppViews = () => {
       
     >
         {({ start, pause, reset }) => (
-            <>
+            <div className='timer_section'>
                 <div className='timer_countdown'>
                   <h4>Session time remaining:</h4>
                     <Timer.Minutes /> minutes
@@ -51,7 +51,7 @@ export const AppViews = () => {
                     <button onClick={pause}>Pause Timer!</button>
                     <button onClick={reset}>Reset Timer!</button>
                 </div>
-            </>
+            </div>
         )}
     </Timer><TaskForm /></>} />
 		    <Route path="/mySessions" element={<><UserSessionsList/> </>} />
