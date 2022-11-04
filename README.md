@@ -98,7 +98,7 @@ Rubber Ducking is almost essential.
  
 3. A time saver: create CSS classNames on elements you'll want to style later *as you make them*. That way you won't have to go back and refactor those in when it's time to start designing.
  
-4. Use [Rubber Ducking](https://www.parkersoftware.com/blog/rubber-ducking-not-just-a-funny-phrase/#:~:text=Essentially%2C%20 rubber%20ducking%20is%20 about,that%20 won't%20 judge%20you.). I'd say this technique is really underrated if you have trouble keeping all the connected pieces straight in your head. I encourage you to use your own. I use this plushie of [Kisuke Urahara](https://www.entertainmentearth.com/product/bleach-kisuke-plush/gn6978), so it doesn't have to be specifically a duck.
+4. Use [Rubber Ducking](https://rubberduckdebugging.com/). I'd say this technique is really underrated if you have trouble keeping all the connected pieces straight in your head. I encourage you to use your own. I use this plushie of [Kisuke Urahara](https://www.entertainmentearth.com/product/bleach-kisuke-plush/gn6978), so it doesn't have to be specifically a duck.
  
  
  
