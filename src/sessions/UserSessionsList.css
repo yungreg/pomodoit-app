@@ -1,4 +1,3 @@
-.session__btn-delete {
-    background-color: aqua;
-    margin-left: auto;
+.sessionsList{
+    display: flex;
 }

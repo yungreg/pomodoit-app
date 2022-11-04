@@ -1,13 +1,18 @@
 /*
+?hwo do I implement the fixed navbar?
+todo: segment elements of the page here on the css
 todo: grab the css from Honey Rae' and refactor for PomoDoIt (for visibility)
 todo: syle this teh way it should look
 */
-
+/* ^navbar */
 .navbar_list {
     display: flex;
+    /* position: fixed;  */
+    background-color: #d9e9c2;
     flex-wrap: nowrap;
     justify-content: left;
     border: 2px dotted black;
+    padding: 2rem;
 }
 
 .navbar__item {

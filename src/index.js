@@ -5,7 +5,6 @@ todo: import BroweserRouter an dreplace strict mode w/ that
 
 */
 
-import { createRoot } from "react-dom/client"
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';

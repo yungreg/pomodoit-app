@@ -9,20 +9,21 @@ todo: create a reset button to make sure the form clears
 
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import "./TaskForm.css"
+
 
 export const TaskForm = () => {
-    /*
-        *TODO: Add the correct default properties to the initial state object
-    */
+    
+    //todo*: Add the correct default properties to the initial state object
+    
     const [taskEntry, setTaskEntry] = useState({
-    //   userId: pomoUserObject.id, //^<-- this comes later for sending to API
       taskDescription: "",
       taskTypeId: 0,
       taskDifficultyId: 0,
       isCompleted: false
     })
     
-    //  TODO*: Use the useNavigate() hook so you can redirect the user back to the timer
+    // todo*: Use the useNavigate() hook so you can redirect the user back to the timer
     const navigate = useNavigate()
 
     //^ the two lines below are needed to populate a user id when sent to the API for storage
@@ -30,11 +31,10 @@ export const TaskForm = () => {
     const pomoUserObject = JSON.parse(localPomoUser)
 
     
-        // TODO*: Create the object to be saved to the API
-    //! this needs refactoring bfore it can be called:
+        // todo*: Create the object to be saved to the API
+        // todo*: this needs refactoring bfore it can be called: 
     const handleSaveButtonClick = (event) => {
         // event.preventDefault(); //!removed this to refresh the page on submission
-      //   console.log("YOU DIED");
         const userSessionToStoreInAPI = {
           userId: pomoUserObject.id,
           taskDescription: taskEntry.taskDescription,
@@ -45,7 +45,7 @@ export const TaskForm = () => {
         //^ this is the template for info that'll get sent to teh API
 
 
-        //* TODO: Perform the fetch() to POST the object to the API
+        // todo*: Perform the fetch() to POST the object to the API
         return fetch(`http://localhost:8088/userSessions`, {
           method: "POST",
           headers: {
@@ -60,11 +60,13 @@ export const TaskForm = () => {
       };
 
     return (
-        <form className="taskForm">
-        <h2 className="taskForm__title">What do you want to get done?</h2>
+    <div classname="taskForm_container">
+
+        <form className="taskForm_form">
+        <h3 className="taskForm__title">What do you want to get done?</h3>
             {/* put two selects here */}
             <fieldset>
-                <label> Task Difficulty: </label>
+                <label className="taskForm_selectText"> Task Difficulty: </label>
                 <select className="form-select-difficulty" onChange={
                             (changeEvent) => {
                                 const copy = {...taskEntry}
@@ -72,17 +74,17 @@ export const TaskForm = () => {
                                 setTaskEntry(copy)
                             }
                         } >
-                <option value="0">How hard is the task?</option>
-                <option value="1">Trivial</option>
-                <option value="2">Easy</option>
-                <option value="3">Medium</option>
-                <option value="4">Hard</option>
-                <option value="5">Extreme</option>
+                <option className="select_option" value="0">How hard is the task?</option>
+                <option className="select_option" value="1">Trivial</option>
+                <option className="select_option" value="2">Easy</option>
+                <option className="select_option" value="3">Medium</option>
+                <option className="select_option" value="4">Hard</option>
+                <option className="select_option" value="5">Extreme</option>
                 </select>
             </fieldset>
 
             <fieldset>
-                <label> Task Type: </label>
+                <label className="taskForm_selectText"> Task Type: </label>
                 <select className="form-select-type"onChange={
                             (changeEvent) => {
                                 const copy = {...taskEntry}
@@ -90,18 +92,18 @@ export const TaskForm = () => {
                                 setTaskEntry(copy)
                             }
                         } >
-                <option value="0">What sort of task is it?</option>
-                <option value="1">Chores</option>
-                <option value="2">Life</option>
-                <option value="3">Liesure/Self-Care</option>
-                <option value="4">Work</option>
-                <option value="5">Studying</option>
+                <option className="select_option" value="0">What sort of task is it?</option>
+                <option className="select_option" value="1">Chores</option>
+                <option className="select_option" value="2">Life</option>
+                <option className="select_option" value="3">Liesure/Self-Care</option>
+                <option className="select_option" value="4">Work</option>
+                <option className="select_option" value="5">Studying</option>
                 </select>
             </fieldset>
             
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="description">Description:</label>
+                    <label className="taskForm_selectText" htmlFor="description">Description:</label>
                     <input
                         required autoFocus
                         type="text"
@@ -120,7 +122,7 @@ export const TaskForm = () => {
             {/* check box for completed or not */}
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="name">Check if you complete the task!</label>
+                    <label className="taskForm_selectText" htmlFor="name">Check this box if you complete the task -->></label>
                     <input type="checkbox"
                         //! <--this onclick may not work. keep an eye on it in CDT 
                         value={taskEntry.isCompleted}
@@ -132,7 +134,7 @@ export const TaskForm = () => {
                         }} />
                 </div>
             </fieldset>
-            <button className="btn btn-savesession"
+            <button className="button_savesession"
             onClick={
                 (click) =>{
                     handleSaveButtonClick(click) 
@@ -143,5 +145,6 @@ export const TaskForm = () => {
             </button>
 
         </form>
+    </div>
     )
 }

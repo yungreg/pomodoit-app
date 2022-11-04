@@ -1,0 +1,32 @@
+/* 
+*todo: make this connect with Sessions.CSS instead of UserSessioinsList
+todo: make a user sessions list css file  so you can style teh entire list. lol 
+*todo: background for list items
+todo: text for list items
+*/
+
+.session__btn-delete {
+    background-color: #f2005a;
+    margin: 15px 10px 10px 10px;
+    color:#ffffff;
+    font: bold;
+}
+
+.sessionsList {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #3b6a3b;
+}
+
+.user_sessionList {
+    background-color: #f9d65b;
+    min-width: 15%;
+    max-width: 90%;
+    padding: 10;
+}
+
+.user_sessionListItem{
+    padding: 10px;
+    font-size: 1.5em;
+}

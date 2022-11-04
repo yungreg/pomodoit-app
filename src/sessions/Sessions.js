@@ -6,11 +6,13 @@
 */
 
 import { Link } from "react-router-dom";
+import "./Sessions.css"
+
 
 export const SessionSections = ({ id, session, taskType, taskDifficulty, taskDescription, isCompleted }) => {
 
     const deleteButton = () => {
-        return <button onClick={()=>{
+        return <button className="session__btn-delete" onClick={()=>{
             fetch(
                 `http://localhost:8088/userSessions/${session.id}`, { 
                     method: "DELETE"
@@ -20,18 +22,22 @@ export const SessionSections = ({ id, session, taskType, taskDifficulty, taskDes
                 .then(() => {
                 
                 });
-        }} className="session__btn-delete">Delete Session?</button>
+        }} >Delete Session?</button>
 
 }
     
     return <>
-    <section className="sessionListItem"> 
-    <Link to={`/mySessions/${id}`}> Task Number: {id}</Link><br/>
-    Task Type: {taskType} <br/>
-    Difficulty Level: {taskDifficulty}<br/>
-    Task Description: {taskDescription}<br/>
-    Completed: {isCompleted}<br/> 
-    {deleteButton()}
+    <section className="sessionsList">
+        <ul type="none" className="user_sessionList">
+            <li className="user_sessionListItem">            
+                <Link to={`/mySessions/${id}`}> Task Number: {id}</Link><br/>
+                Task Type: {taskType} <br/>
+                Difficulty Level: {taskDifficulty}<br/>
+                Task Description: {taskDescription}<br/>
+                Completed: {isCompleted}<br/> 
+                {deleteButton()}
+            </li>    
+        </ul> 
     </section>
    </>
 } 

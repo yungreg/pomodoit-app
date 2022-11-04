@@ -11,16 +11,20 @@ export const NavBar1 = () => {
     const navigate = useNavigate()
 
     return (
-        <ul className="navbar">
+        <ul className="navbar_list">
             <li className="navbar__item active">
-            
                 <Link className="navbar__link" to="/login">Log In</Link>
+            </li>
+            <li className="navbar__item active">
                 <Link className="navbar__link" to="/timer"> Timer (logo image here)
                 </Link>
+            </li>
+            <li className="navbar__item active">
                 <Link className="navbar__link" to="/mySessions">My Sessions</Link>
+            </li>
 
                
-            </li>
+            
             {
                 localStorage.getItem("pomo_user")
                     ? <li className="navbar__item navbar__logout">

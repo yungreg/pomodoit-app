@@ -1,0 +1,39 @@
+/* 
+! you have to style the taskfornm from here
+*todo: find teh header 
+*todo: figure out how style that bihhhhh (so everyone can see it)
+todo: style timer
+todo: basiucally move everything from Taskform.css over here lol
+*/
+
+.container--sitewide_welcome{
+    text-align: center;
+    background-color: #3b6a3b
+}
+
+
+
+/* ^timer */
+.timer_section{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: #3b6a3b
+}
+
+.button_Timer{
+    background-color: #d9e9c2;
+    margin: 5px 7px 5px 7px;
+    border: 2px solid black;
+    border-radius: .25rem;
+}
+
+.timer_readout {
+    color: #f9d65b;
+    font-size: 24px;
+}
+
+.timer_numbers {
+    color: #f9d65b;
+    font-size: larger;
+}
