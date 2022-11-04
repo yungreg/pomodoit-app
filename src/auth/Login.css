@@ -79,21 +79,17 @@ fieldset {
     width: 8rem;
     height: 2.25rem;
     background-color: #d9e9c2;
-    border: 5px solid black;
+    border: 3px solid black;
     border-radius: .75rem;
-    display: inline-block;
+
 }
 
 .button--register {
     width: 12rem;
     height: 2.25rem;
     background-color: #f9d65b;
-    border: 5px solid black;
+    border: 3px solid black;
     border-radius: .75rem;
     display: inline-block; 
     margin: 2rem;
-}
-.button--close {
-    position: relative;
-    bottom: -2rem;
 }

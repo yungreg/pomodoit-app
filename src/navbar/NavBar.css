@@ -10,7 +10,6 @@ todo: syle this teh way it should look
     /* position: fixed;  */
     background-color: #d9e9c2;
     flex-wrap: nowrap;
-    justify-content: left;
     border: 2px dotted black;
     padding: 2rem;
 }
