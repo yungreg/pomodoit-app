@@ -120,7 +120,6 @@ export const TaskForm = () => {
                 <div className="form-group">
                     <label className="taskForm_selectText" htmlFor="name">Check this box if you complete the task -->></label>
                     <input type="checkbox"
-                        //! <--this onclick may not work. keep an eye on it in CDT 
                         value={taskEntry.isCompleted}
                         onChange={
                             (changeEvent) => {
@@ -134,7 +133,6 @@ export const TaskForm = () => {
             onClick={
                 (click) =>{
                     handleSaveButtonClick(click) 
-                    //*call me when input form's button post is completed;
                 }
             }>
                 Submit Session & Refresh Timer!
