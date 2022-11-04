@@ -3,7 +3,7 @@
 *todo: refactor the form for your needs
 *todo: make Edit Session button functionally updATE STATE 
 *todo: allow that button to overwrite the save state in the datasetwith teh updated ifo
-todo: Figure out how to make an edit button next to every listing
+*todo: Figure out how to make an edit button next to every listing
 */
 
 import { useEffect, useState } from "react"
@@ -12,7 +12,7 @@ import "./SessionEditor.css"
 
 
 export const EditSessionsForm = () => {
-    //set up initial staste
+    //todo*: set up initial state for Edited Tasks
     const [editedTask, setEditedTask] = useState({        
           taskDescription: "",
           taskTypeId: 0,
@@ -24,7 +24,7 @@ export const EditSessionsForm = () => {
         const navigate = useNavigate()
         const {id} = useParams() 
 
-        //this fetch saves teh entries to teh API 
+        //todo*: this fetch saves teh entries to teh API 
         useEffect(
           () => {
             fetch(
@@ -36,7 +36,7 @@ export const EditSessionsForm = () => {
                 setEditedTask(userUpdatedSession)
               });
           },
-          [] // When this array is empty, you are observing initial component state
+          [] //^remember: When this array is empty, you are observing initial component state
         );
 
     const handleSaveButtonClick = (event) => {
@@ -55,7 +55,10 @@ export const EditSessionsForm = () => {
     return (
         <form className="editSessionForm_container">
         <h2 className="editSessionForm__title">Need  to edit details? Edit your session here: </h2>
-            {/* put two selects here */}
+            {/* 
+            //todo*: put two selects below 
+            //todo*: attach classNames to elements for CSS  
+            */}
             <fieldset>
                 <label className="editSessionForm_difficulty"> Task Difficulty: </label>
                 <select className=".editSessionForm_select_difficulty" onChange={
@@ -99,7 +102,6 @@ export const EditSessionsForm = () => {
                         required autoFocus
                         type="text"
                         className="form-control"
-                        // placeholder="Describe the task here!"
                         value={editedTask?.taskDescription}
                         onChange={
                             (changeEvent) => {
@@ -115,7 +117,6 @@ export const EditSessionsForm = () => {
                 <div className="form-group">
                     <label className="editSessionForm_checkbox" htmlFor="name">ONLY Check this box if you completed the task.</label>
                     <input type="checkbox"
-                        //! <--this onclick may not work. keep an eye on it in CDT 
                         value={editedTask?.isCompleted}
                         onChange={
                             (changeEvent) => {

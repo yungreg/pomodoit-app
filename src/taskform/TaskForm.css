@@ -3,21 +3,19 @@
 *todo: make the background of eth form visible 
 *todo: reposition button with margin
 todo: adjust margin sizes between inputs on the form
-todo*: style the inside of teh select boxes
-!todo: figur e out what you need to move to AppViews.css. that will include the classnames. lol :/
+*todo: style the inside of teh select boxes
+*todo: figur e out what you need to move to AppViews.css. that will include the classnames. lol :/
 */
 
 /* ^form */
 .taskForm_container{
     text-align: center;
     background-color: #3b6a3b
-    /* idk why this wont work */
 }
 
 
 .taskForm_form {
     display: flex;
-    /* max-width: 75%; */
     flex-direction: column;
     align-items: center;
     background-color: #3b6a3b;

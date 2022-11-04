@@ -1,7 +1,6 @@
 /* 
 *todo: import register code from Honey raes
-todo: refactor teh code to make sure it works for PomoDoIt
-todo:
+*todo: refactor teh code to make sure it works for PomoDoIt
 */
 
 import { useState } from "react"
@@ -41,7 +40,7 @@ export const Register = (props) => {
             .then(res => res.json())
             .then(response => {
                 if (response.length > 0) {
-                    // Duplicate email. No good.
+                    //^ note to self: reuse this window alert once the task form is submitted
                     window.alert("Account with that email address already exists")
                 }
                 else {

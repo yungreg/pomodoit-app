@@ -34,7 +34,6 @@ export const AppViews = () => {
 		    <Route path="/" element={<><Login /></>} />
         <Route path="mySessions" element={ <UserSessionsList/> } />
 
-		    {/* the code below is very weird but works..? there has to be a better solution than this. */}
         
         <Route path="/timer" element={
         <>

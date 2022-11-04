@@ -2,7 +2,7 @@
 /*
 *todo: move deletebuytton() sessionSections
 *todo: pass in session info as a prop then i'll be able to access it inside SessionSections
-*todo: make the task number display bbecome a link to tak eyou to the edit screen where yoj can edid individual  tasks
+*todo: make the task number display bbecome a link to tak eyou to the edit screen where yoj can edid individual tasks
 */
 
 import { Link } from "react-router-dom";

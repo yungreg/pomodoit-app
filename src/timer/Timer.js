@@ -3,8 +3,8 @@
 *todo: import that syuntax
 *todo: refactor for your needs (keep it basic.....please. lol)
 *todo: figure out install error (worked with a legacy install)
-todo: figure out what "mounting" means...?
-^ styluing todo below:
+*todo: figure out what "mounting" means...?
+^ styling todo below:
 ?pregunta: can i put the minutes and seconds in a div and then style that div? i wonder because of the react hook
 */
 import React from 'react'

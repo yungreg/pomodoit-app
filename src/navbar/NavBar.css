@@ -7,7 +7,6 @@ todo: syle this teh way it should look
 /* ^navbar */
 .navbar_list {
     display: flex;
-    /* position: fixed;  */
     background-color: #d9e9c2;
     flex-wrap: nowrap;
     border: 2px dotted black;

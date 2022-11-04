@@ -1,9 +1,8 @@
 /*
-todo: creaste a form component for teh timer page
-todo: imclude input field, two select fields, and one checkbox for the boolean
-todo: fetch teh initial state of userPomos
-todo: match user ids to be able to display only the sessions for eth signed in user //!use user id 1 from users test this!
-todo: create a reset button to make sure the form clears
+*todo: creaste a form component for teh timer page
+*todo: imclude input field, two select fields, and one checkbox for the boolean
+*todo: fetch teh initial state of userPomos
+*todo: match user ids to be able to display only the sessions for eth signed in user 
 */ 
 
 
@@ -26,7 +25,6 @@ export const TaskForm = () => {
     // todo*: Use the useNavigate() hook so you can redirect the user back to the timer
     const navigate = useNavigate()
 
-    //^ the two lines below are needed to populate a user id when sent to the API for storage
     const localPomoUser = localStorage.getItem("pomo_user")
     const pomoUserObject = JSON.parse(localPomoUser)
 
@@ -34,7 +32,7 @@ export const TaskForm = () => {
         // todo*: Create the object to be saved to the API
         // todo*: this needs refactoring bfore it can be called: 
     const handleSaveButtonClick = (event) => {
-        // event.preventDefault(); //!removed this to refresh the page on submission
+        // event.preventDefault(); //^ note to self: removed this to refresh the page on submission
         const userSessionToStoreInAPI = {
           userId: pomoUserObject.id,
           taskDescription: taskEntry.taskDescription,
@@ -64,7 +62,6 @@ export const TaskForm = () => {
 
         <form className="taskForm_form">
         <h3 className="taskForm__title">What do you want to get done?</h3>
-            {/* put two selects here */}
             <fieldset>
                 <label className="taskForm_selectText"> Task Difficulty: </label>
                 <select className="form-select-difficulty" onChange={
@@ -119,7 +116,6 @@ export const TaskForm = () => {
                         } />
                 </div>
             </fieldset>
-            {/* check box for completed or not */}
             <fieldset>
                 <div className="form-group">
                     <label className="taskForm_selectText" htmlFor="name">Check this box if you complete the task -->></label>

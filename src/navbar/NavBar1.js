@@ -1,7 +1,7 @@
 /*
 *todo: grab the component from Honey Rae's
-todo: refactor component for PomodoIT links
-todo: import navbar css
+*todo: refactor component for PomodoIT links
+*todo: import navbar css
 */
 
 import { Link, useNavigate } from "react-router-dom"

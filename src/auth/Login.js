@@ -4,8 +4,8 @@
 *todo: make sure to reroute soemwhere when the login is successful
 *todo: refactor jsx this app to become PomoDoIt! //!remember classes and tehg second button for the register page
 *todo: make  a button for registering/
-todo: Adjust the class nmames to match teh button for Reegistering
-todo: make sur eto make teh same adjustments for teh register page
+*todo: Adjust the class nmames to match teh button for Reegistering
+*todo: make sure to make the same adjustments for the register page
 */
 
 import React, { useState } from "react"
