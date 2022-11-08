@@ -10,6 +10,7 @@ todo: text for list items
     margin: 15px 10px 10px 10px;
     color:#ffffff;
     font: bold;
+    padding: .25rem;
 }
 
 .sessionsList {
@@ -28,5 +29,10 @@ todo: text for list items
 
 .user_sessionListItem{
     padding: 10px;
-    font-size: 1.5em;
+    font-size: 1em;
+}
+
+.user_sessionListTaskNumber {
+    font-weight: bold;
+    font-style: oblique;
 }

@@ -31,9 +31,10 @@ export const Login = () => {
                     }))
 
                     navigate("/timer")
+                    window.alert("Welcome in! Sending you to the Timer...")
                 }
                 else {
-                    window.alert("Invalid login! Have you Signed up yet?")
+                    window.alert("Invalid login! Have you registered yet?")
                 }
             })
     }
@@ -43,7 +44,7 @@ export const Login = () => {
             <section>
               <div className="welcome_message">
                 <h1 className="login--h1">Welcome to PomoDoIt!</h1>
-                <h2 className="login--h2">✨PomoDoIt until it’s PomoDone!✨</h2>
+                <h2 className="login--h2">✨PomoDoIt 'til it’s PomoDone!✨</h2>
               </div>
                 <form className="form--login" onSubmit={handleLogin}>
                     <h3 className="login--h3">Please sign in below to get started!</h3>
@@ -58,16 +59,14 @@ export const Login = () => {
                     </fieldset>
                     <fieldset>
                         <button className="button--login"type="submit">
-                            <Link>
                             Log in!
-                            </Link>
                         </button>
                     </fieldset>
                 </form>
             </section>
             <section >
                <button className="button--register">
-                <Link to="/register">Not Signed up yet?</Link>
+                <Link to="/register">Not Registered Yet?</Link>
                </button>
             </section>
         </main>

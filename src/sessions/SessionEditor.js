@@ -49,6 +49,7 @@ export const EditSessionsForm = () => {
         })
         .then(res => res.json())
         .then(() => {
+            window.alert("Task Description Updated!")
             navigate("/mySessions")
         })
     }
@@ -68,7 +69,7 @@ export const EditSessionsForm = () => {
                                 setEditedTask(copy)
                             }
                         } >
-                <option className="select_option" value="0">Choose task difficulty?</option>
+                <option className="select_option" value="0">Choose Task Difficulty</option>
                 <option className="select_option" value="1">Trivial</option>
                 <option className="select_option" value="2">Easy</option>
                 <option className="select_option" value="3">Medium</option>
@@ -86,8 +87,8 @@ export const EditSessionsForm = () => {
                                 setEditedTask(copy)
                             }
                         } >
-                <option className="select_option" value="1">Chores</option>
                 <option className="select_option" value="0">Choose Task Type:</option>
+                <option className="select_option" value="1">Chores</option>
                 <option className="select_option" value="2">Life</option>
                 <option className="select_option" value="3">Liesure/Self-Care</option>
                 <option className="select_option" value="4">Work</option>
@@ -115,7 +116,7 @@ export const EditSessionsForm = () => {
   
             <fieldset>
                 <div className="form-group">
-                    <label className="editSessionForm_checkbox" htmlFor="name">ONLY Check this box if you completed the task.</label>
+                    <label className="editSessionForm_checkbox" htmlFor="name">ONLY Check this box if you completed the task--> </label>
                     <input type="checkbox"
                         value={editedTask?.isCompleted}
                         onChange={

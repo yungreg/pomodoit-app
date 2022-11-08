@@ -5,12 +5,13 @@
 *todo: make the task number display bbecome a link to tak eyou to the edit screen where yoj can edid individual tasks
 */
 
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
 import "./Sessions.css"
 
 
 export const SessionSections = ({ id, session, taskType, taskDifficulty, taskDescription, isCompleted }) => {
 
+    const navigate = useNavigate()
     const deleteButton = () => {
         return <button className="session__btn-delete" onClick={()=>{
             fetch(
@@ -20,24 +21,42 @@ export const SessionSections = ({ id, session, taskType, taskDifficulty, taskDes
               )
                 .then(response => response.json)
                 .then(() => {
-                
+                    window.alert("Session successfully deleted. Refresh this page to continue.");
+                   
                 });
         }} >Delete Session?</button>
 
 }
     
-    return <>
-    <section className="sessionsList">
-        <ul type="none" className="user_sessionList">
-            <li className="user_sessionListItem">            
-                <Link to={`/mySessions/${id}`}> Task Number: {id}</Link><br/>
-                Task Type: {taskType} <br/>
-                Difficulty Level: {taskDifficulty}<br/>
-                Task Description: {taskDescription}<br/>
-                Completed: {isCompleted}<br/> 
+    return (
+      <>
+        <section className="sessionsList">
+          <ul type="none" className="user_sessionList">
+            <li className="user_sessionListItem">
+              <ul>
+                <li className="user_sessionListTaskNumber">
+                  <Link to={`/mySessions/${id}`}> Task Number: {id}</Link>
+                  <br />
+                </li>
+                <li>
+                  Task Type: {taskType} <br />
+                </li>
+                <li>
+                  Difficulty Level: {taskDifficulty}
+                  <br />
+                </li>
+                <li>
+                  Task Description: {taskDescription} <br />
+                </li>
+                <li>
+                  Completed: {isCompleted}
+                  <br />
+                </li>
                 {deleteButton()}
-            </li>    
-        </ul> 
-    </section>
-   </>
+              </ul>
+            </li>
+          </ul>
+        </section>
+      </>
+    );
 } 

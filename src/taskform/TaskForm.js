@@ -54,11 +54,12 @@ export const TaskForm = () => {
           .then((res) => res.json())
           .then(() => {
             navigate("/timer");
+            window.alert("Session submitted! Good for you! Self checkin time. Can you keep going?")
           });
       };
 
     return (
-    <div classname="taskForm_container">
+    <div className="taskForm_container">
 
         <form className="taskForm_form">
         <h3 className="taskForm__title">What do you want to get done?</h3>
