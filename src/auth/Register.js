@@ -5,7 +5,7 @@
 
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
-import "./Login.css"
+import "./Register.css"
 
 export const Register = (props) => {
     const [customer, setCustomer] = useState({
@@ -58,23 +58,21 @@ export const Register = (props) => {
     }
 
     return (
-        <main style={{ textAlign: "center" }}>
-            <form className="form--login" onSubmit={handleRegister}>
-                <h1 className="h3 mb-3 font-weight-normal">Sign up, and get things done!</h1>
+        <main className="container--login" style={{ textAlign: "center" }}>
+            <form className="register--loginForm" onSubmit={handleRegister}>
+                <h3 className="register--headline">Sign up, sign in, & ✨PomoDoIt!✨</h3>
                 <fieldset>
-                    <label htmlFor="fullName"> Full Name </label>
                     <input onChange={updateCustomer}
                            type="text" id="fullName" className="form-control"
-                           placeholder="Enter your name (format: Firstname Lastname)" required autoFocus />
+                           placeholder="Enter your full name here" required autoFocus />
                 </fieldset>
                 <fieldset>
-                    <label htmlFor="email"> Email address </label>
                     <input onChange={updateCustomer}
                         type="email" id="email" className="form-control"
-                        placeholder="Email address" required />
+                        placeholder="Register your email address here" required />
                 </fieldset>
                 <fieldset>
-                    <button type="submit"> Register </button>
+                    <button className="button--register" type="submit"> Create Your Profile! </button>
                 </fieldset>
             </form>
         </main>

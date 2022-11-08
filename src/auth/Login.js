@@ -46,19 +46,21 @@ export const Login = () => {
                 <h2 className="login--h2">✨PomoDoIt until it’s PomoDone!✨</h2>
               </div>
                 <form className="form--login" onSubmit={handleLogin}>
-                    <h3 className="login--h3">Please sign in to get started!</h3>
+                    <h3 className="login--h3">Please sign in below to get started!</h3>
                     <fieldset>
                         <label htmlFor="inputEmail">  </label>
                         <input type="email"
                             value={email}
                             onChange={evt => set(evt.target.value)}
                             className="form-control"
-                            placeholder="Please enter email address you signed up with here:"
+                            placeholder="Please enter email address you registered with here:"
                             required autoFocus />
                     </fieldset>
                     <fieldset>
                         <button className="button--login"type="submit">
+                            <Link>
                             Log in!
+                            </Link>
                         </button>
                     </fieldset>
                 </form>
