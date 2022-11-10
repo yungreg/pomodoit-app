@@ -8,6 +8,7 @@ todo: basiucally move everything from Taskform.css over here lol
 
 .container--sitewide_welcome{
     text-align: center;
+    text-shadow: 3px 2px black;
     background-color: #3b6a3b
 }
 

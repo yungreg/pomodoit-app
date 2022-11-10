@@ -54,7 +54,7 @@ export const TaskForm = () => {
           .then((res) => res.json())
           .then(() => {
             navigate("/timer");
-            window.alert("Session submitted! Good for you! Self checkin time. Can you keep going?")
+            window.alert("Session submitted! Good for you! Self check in time. Can you keep going?")
           });
       };
 
@@ -98,7 +98,7 @@ export const TaskForm = () => {
                 <option className="select_option" value="5">Studying</option>
                 </select>
             </fieldset>
-            
+          
             <fieldset>
                 <div className="form-group">
                     <label className="taskForm_selectText" htmlFor="description">Description:</label>
