@@ -10,14 +10,14 @@ import TimeForm from "./Form";
 
 const TimerComplete = () => {
     const [timeLeft, setTimeLeft] = useState(0)
-    const [isPaused, setPaused] = useState(true) 
+    const [isPaused, setIsPaused] = useState(true) 
   
     return (
         <>
-        <TimeForm setTimeLeft={setTimeLeft}/>
+        <TimeForm setTimeLeft={setTimeLeft} setIsPaused={setIsPaused}/>
         {timeLeft<0? 
-            <Finished setTimeLeft={setTimeLeft} setPaused={setPaused} />:
-            <Timer timeLeft={timeLeft} setTimeLeft={setTimeLeft} setPaused={setPaused} isPaused={isPaused} /> 
+            <Finished setTimeLeft={setTimeLeft} setIsPaused={setIsPaused} />:
+            <Timer timeLeft={timeLeft} setTimeLeft={setTimeLeft} setIsPaused={setIsPaused} isPaused={isPaused} /> 
         }
         </>
   );

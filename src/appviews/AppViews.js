@@ -37,28 +37,8 @@ export const AppViews = () => {
         
         <Route path="/timer" element={
         <>
-        <TimerComplete />
-          {/* <Timer 
-          initialTime={1500000} 
-          startImmediately={false}
-          direction={"backward"}>
-            {({ start, pause, reset }) => (
-              <div className='timer_section'>
-                  <div className='timer_countdown'>
-                    <h4 className='timer_readout' >Session time remaining:</h4>
-                      <Timer.Minutes /> minutes <br/>
-                      <Timer.Seconds /> seconds
-                  </div>
-                  <div className='timer_countdown'>
-                      <button className="button_Timer" onClick={start}>Start or Resume timer!</button>
-                      <button className="button_Timer" onClick={pause}>Pause Timer!</button>
-                      <button className="button_Timer" onClick={reset}>Reset Timer!</button>
-                  </div>
-              </div>
-              )}
-          </Timer> */}
-
           <TaskForm />
+          <TimerComplete />
         </>} />
 
 		    <Route path="/mySessions" element={<><UserSessionsList/> </>} />
