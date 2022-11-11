@@ -10,7 +10,7 @@ import { UserSessionsList } from "../sessions/UserSessionsList"
 import { TaskForm } from "../taskform/TaskForm"
 import { EditSessionsForm } from "../sessions/SessionEditor"
 import { Route, Routes, Outlet } from "react-router-dom"
-import Timer from "react-compound-timer/build"
+import TimerComplete from "../timer/TimerComplete"
 import "./AppViews.css"
 
 export const AppViews = () => {
@@ -37,7 +37,8 @@ export const AppViews = () => {
         
         <Route path="/timer" element={
         <>
-          <Timer 
+        <TimerComplete />
+          {/* <Timer 
           initialTime={1500000} 
           startImmediately={false}
           direction={"backward"}>
@@ -45,7 +46,6 @@ export const AppViews = () => {
               <div className='timer_section'>
                   <div className='timer_countdown'>
                     <h4 className='timer_readout' >Session time remaining:</h4>
-                      {/* how do I style these next two hooks? */}
                       <Timer.Minutes /> minutes <br/>
                       <Timer.Seconds /> seconds
                   </div>
@@ -56,7 +56,7 @@ export const AppViews = () => {
                   </div>
               </div>
               )}
-          </Timer>
+          </Timer> */}
 
           <TaskForm />
         </>} />

@@ -6,6 +6,15 @@ todo: style timer
 todo: basiucally move everything from Taskform.css over here lol
 */
 
+
+/* ^sitewide */
+/* &tThis is a pseudo class which is cool */
+:root {
+    background: #d9e9c2;
+
+  }
+  
+
 .container--sitewide_welcome{
     text-align: center;
     text-shadow: 3px 2px black;
@@ -19,7 +28,7 @@ todo: basiucally move everything from Taskform.css over here lol
     display: flex;
     flex-direction: column;
     text-align: center;
-    background-color: #3b6a3b
+    background-color: #3b6a3b;
 }
 
 .button_Timer{

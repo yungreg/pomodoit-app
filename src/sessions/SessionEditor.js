@@ -36,7 +36,7 @@ export const EditSessionsForm = () => {
                 setEditedTask(userUpdatedSession)
               });
           },
-          [] //^remember: When this array is empty, you are observing initial component state
+          [id] //^remember: When this array is empty, you are observing initial component state
         );
 
     const handleSaveButtonClick = (event) => {

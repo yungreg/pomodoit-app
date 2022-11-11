@@ -28,7 +28,7 @@ useEffect(
             .then((sessionsArray) => {
                 setSessions(sessionsArray)
             })
-        }, [] 
+        }, [pomoUserObject.id] 
     )
 
     //^note to self: this one will watch sessions a user's info, than match that info with teh right user id, and pull that info from storage. 
