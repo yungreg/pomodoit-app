@@ -19,7 +19,7 @@ const Text = styled.p`
 
 const Form = () => {
   
-  const { register, handleSubmit, errors } = useForm();
+  const { register, handleSubmit, formState: { errors } } = useForm();
   const onSubmit = (data) => {
     console.log(data)
   }
