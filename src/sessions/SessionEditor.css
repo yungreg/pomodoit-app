@@ -1,9 +1,17 @@
 /* ^form */
 .editSessionForm_container{
     text-align: center;
-    background-color: #3b6a3b
+    background-color: #3b6a3b;
+    max-width: 75%;
+    margin-left: 18%;
+    margin-right: 18%;
+    border-radius: .25rem;
+    border: 5px solid black;
 }
 
+.form-control{
+    color: #f9d65b;
+}
 
 .editSessionForm_form {
     display: flex;
@@ -23,7 +31,9 @@
 .editSessionForm_description,
 .editSessionForm_checkbox {
     color: #f9d65b;
-    font-size: 130%;
+    text-shadow: 3px 2px black;
+    font-size: 40px;
+    
 }
 
 

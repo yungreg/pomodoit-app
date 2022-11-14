@@ -19,9 +19,10 @@ const Container = styled.div`
 `
 const Text = styled.p`
   margin: 0px 10px;
-  color: #f9d65b;
+  color: #07ff41;
   text-shadow: 2px 2px black;
   font-size: 40px;
+  font-weight: bold;
 `
 
 const InputButton = styled.input`
@@ -35,11 +36,12 @@ const InputField = styled.input`
   color: #f9d65b;
   background-color: #000000;
   font-size: 20px;
-  border-color: #f9d65b;
+  border: 3px solid #f9d65b;
   padding: 10px;
   margin-top: 20px;
   margin-right: 15px;
   width: 60%;
+  border-radius: .25rem;
   ;
 `
 const Form = ({setTimeLeft, setIsPaused}) => {
@@ -54,6 +56,7 @@ const Form = ({setTimeLeft, setIsPaused}) => {
   return (
     <>
     <Container >
+            <Text>Step 2:</Text>
             <Text>How long will it take you?</Text>
             
           <form  noValidate onSubmit={handleSubmit(onSubmit)}  id="pomodoit-form">

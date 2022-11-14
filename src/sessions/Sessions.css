@@ -11,10 +11,13 @@ todo: text for list items
     color:#ffffff;
     font: bold;
     padding: .25rem;
+    border: 4px solid black;
 }
 
 .sessionsList {
     display: flex;
+    border: 5px solid black;
+    border-radius: .75em;
     flex-direction: column;
     align-items: center;
     background-color: #3b6a3b;
@@ -26,8 +29,7 @@ todo: text for list items
 .user_sessionList {
     background-color: #f9d65b;
     min-width: 15%;
-    max-width: 90%;
-    padding: 10;
+    max-width: 90%; 
 }
 
 .user_sessionListItem{

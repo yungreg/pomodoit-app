@@ -9,7 +9,9 @@ todo: adjust margin sizes between inputs on the form
 
 /* ^form */
 .form-control{
-    margin-top: 20px;
+    margin-top: 10px;
+    background-color: black;
+    border: 3px solid #f9d65b;
 }
 
 .taskForm_container{
@@ -38,25 +40,29 @@ todo: adjust margin sizes between inputs on the form
 
 
 .taskForm__titleh2 {
-    color: #f9d65b;
+    color: #07ff41;
     font-size: 40px;
+    margin: 10px;
 }
 
 .taskForm__titleh3 {
-    color: #f9d65b;
+    color: #07ff41;
     font-size: 25px;
+    margin: 0px;
 }
 
 .taskForm_selectText {
     color: #f9d65b;
-    font-size: 130%;
+    font-size: 25px;
 }
 
 .taskForm_selectText_check {
     color: #f9d65b;
     font-size: 130%;
     background-color: rgb(0, 0, 0);
+    margin-top: 3px;
     padding: 5px;
+    border: 2px solid #f9d65b;
     border-radius: .50rem;
 }
 

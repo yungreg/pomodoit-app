@@ -1,3 +1,7 @@
 .sessionsList{
     display: flex;
 }
+
+.user_sessionListTaskNumber{
+    font-size: 24px;
+}

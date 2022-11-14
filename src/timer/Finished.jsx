@@ -7,9 +7,9 @@ const Finished = ({setIsPaused, setTimeLeft}) => {
 
   const CongratsText = styled.p`
   margin: 20px;
-  color: #f9d65b;
+  color: #07ff41;
   text-shadow: 3px 2px black;
-  font-size: 50px;
+  font-size: 30px;
 `
 const ButtonStyling = styled.button`
   color: #f9d65b;

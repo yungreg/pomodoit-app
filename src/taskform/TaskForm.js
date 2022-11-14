@@ -120,6 +120,7 @@ export const TaskForm = () => {
 
             <fieldset>
                 <div className="form-group">
+                    <h2 className="taskForm__titleh2">Step 3:</h2>
                     <label className="taskForm_selectText_check" htmlFor="name">Check this box if you complete the task -->></label>
                     <input type="checkbox"
                         value={taskEntry.isCompleted}
