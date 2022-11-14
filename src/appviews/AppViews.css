@@ -11,14 +11,25 @@ todo: basiucally move everything from Taskform.css over here lol
 /* &tThis is a pseudo class which is cool */
 :root {
     background: #3b6a3b;
-
+    background-image: url("https://wallpaperaccess.com/full/27037.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    
   }
   
+.sitewide_subheader{
+    padding-bottom: 15px;
+}
+
 
 .container--sitewide_welcome{
     text-align: center;
     text-shadow: 3px 2px black;
-    background-color: #3b6a3b
+    background-color: #3b6a3b;
+    max-width: 75%;
+    margin-left: 18%;
+    margin-right: 18%;
+    border-radius: .75rem;
 }
 
 

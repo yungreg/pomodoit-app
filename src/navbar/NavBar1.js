@@ -16,7 +16,7 @@ export const NavBar1 = () => {
                 <Link className="navbar__link" to="/login">Log In</Link>
             </li>
             <li className="navbar__item active">
-                <Link className="navbar__link" to="/timer"> Timer (logo image here)
+                <Link className="navbar__link" to="/timer"> Timer
                 </Link>
             </li>
             <li className="navbar__item active">
@@ -27,12 +27,14 @@ export const NavBar1 = () => {
             
             {
                 localStorage.getItem("pomo_user")
-                    ? <li className="navbar__item navbar__logout">
+                    ? <button className="navbar__item_navbar__logout">
+                        <li>
                         <Link className="navbar__link" to="" onClick={() => {
                             localStorage.removeItem("pomo_user")
                             navigate("/login",)
                         }}>Logout</Link>
                     </li>
+                        </button>
                     : ""
             }
         </ul>

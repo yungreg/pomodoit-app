@@ -8,9 +8,14 @@ todo: syle this teh way it should look
 .navbar_list {
     display: flex;
     background-color: #d9e9c2;
+    border-radius: .75rem;
+    justify-content: center;
     flex-wrap: nowrap;
-    border: 2px dotted black;
-    padding: 2rem;
+    border: 4px solid black;
+    padding: 1rem;
+    font-size: 30px;
+    margin-left: 10%;
+    margin-right: 10%;
 }
 
 .navbar__item {
@@ -22,3 +27,8 @@ todo: syle this teh way it should look
     margin-left: auto;
 }
 
+.navbar__item_navbar__logout{
+    list-style-type: none;
+    background-color: rgb(244, 173, 185);
+    font-size: 26px;
+}

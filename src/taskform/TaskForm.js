@@ -62,7 +62,26 @@ export const TaskForm = () => {
     <div className="taskForm_container">
 
         <form className="taskForm_form">
-        <h3 className="taskForm__title">What do you want to get done?</h3>
+        <h2 className="taskForm__titleh2">Step 1:</h2>
+        <h3 className="taskForm__titleh3">Describe what task you want to focus on:</h3>
+        <fieldset>
+                <div className="form-group">
+                    <label className="taskForm_selectText" htmlFor="description">Description:</label>
+                    <input
+                        required autoFocus
+                        type="text"
+                        className="form-control"
+                        placeholder="Describe the task here!"
+                        value={taskEntry.taskDescription}
+                        onChange={
+                            (changeEvent) => {
+                                const copy = {...taskEntry}
+                                copy.taskDescription = changeEvent.target.value
+                                setTaskEntry(copy)
+                            }
+                        } />
+                </div>
+            </fieldset>
             <fieldset>
                 <label className="taskForm_selectText"> Task Difficulty: </label>
                 <select className="form-select-difficulty" onChange={
@@ -98,28 +117,10 @@ export const TaskForm = () => {
                 <option className="select_option" value="5">Studying</option>
                 </select>
             </fieldset>
-          
+
             <fieldset>
                 <div className="form-group">
-                    <label className="taskForm_selectText" htmlFor="description">Description:</label>
-                    <input
-                        required autoFocus
-                        type="text"
-                        className="form-control"
-                        placeholder="Describe the task here!"
-                        value={taskEntry.taskDescription}
-                        onChange={
-                            (changeEvent) => {
-                                const copy = {...taskEntry}
-                                copy.taskDescription = changeEvent.target.value
-                                setTaskEntry(copy)
-                            }
-                        } />
-                </div>
-            </fieldset>
-            <fieldset>
-                <div className="form-group">
-                    <label className="taskForm_selectText" htmlFor="name">Check this box if you complete the task -->></label>
+                    <label className="taskForm_selectText_check" htmlFor="name">Check this box if you complete the task -->></label>
                     <input type="checkbox"
                         value={taskEntry.isCompleted}
                         onChange={

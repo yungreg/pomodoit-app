@@ -8,9 +8,22 @@ todo: adjust margin sizes between inputs on the form
 */
 
 /* ^form */
+.form-control{
+    margin-top: 20px;
+}
+
 .taskForm_container{
+    display: flex;
+    flex-direction: column;
     text-align: center;
-    background-color: #3b6a3b
+    background-color: #3b6a3b;
+    text-shadow: 3px 2px black;
+    max-width: 75%;
+    margin-left: 18%;
+    margin-right: 18%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: .75rem;
 }
 
 
@@ -20,13 +33,31 @@ todo: adjust margin sizes between inputs on the form
     align-items: center;
     background-color: #3b6a3b;
     border: 5px solid black;
-    border-radius: .25rem;
+    border-radius: .75rem;
 }
 
 
-.taskForm_selectText, .taskForm__title {
+.taskForm__titleh2 {
+    color: #f9d65b;
+    font-size: 40px;
+}
+
+.taskForm__titleh3 {
+    color: #f9d65b;
+    font-size: 25px;
+}
+
+.taskForm_selectText {
     color: #f9d65b;
     font-size: 130%;
+}
+
+.taskForm_selectText_check {
+    color: #f9d65b;
+    font-size: 130%;
+    background-color: rgb(0, 0, 0);
+    padding: 5px;
+    border-radius: .50rem;
 }
 
 
