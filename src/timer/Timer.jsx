@@ -32,10 +32,10 @@ const Timer = ({timeLeft, setTimeLeft, isPaused, setIsPaused}) => {
 
   useEffect(() => {
     const id = setInterval(() => {
-      {isPaused?
+      isPaused?
         clearInterval(intervalRef.current):
         setTimeLeft(timeLeft-1)
-      }
+      
     }, 1000)
     intervalRef.current = id;
     return () => clearInterval(intervalRef.current)

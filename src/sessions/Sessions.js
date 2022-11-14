@@ -5,13 +5,12 @@
 *todo: make the task number display bbecome a link to tak eyou to the edit screen where yoj can edid individual tasks
 */
 
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Sessions.css"
 
 
 export const SessionSections = ({ id, session, taskType, taskDifficulty, taskDescription, isCompleted }) => {
 
-    // const navigate = useNavigate()
     const deleteButton = () => {
         return <button className="session__btn-delete" onClick={()=>{
             fetch(
