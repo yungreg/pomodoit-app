@@ -1,0 +1,58 @@
+/* ^form */
+.editSessionForm_container{
+    text-align: center;
+    background-color: #3b6a3b;
+    max-width: 75%;
+    margin-left: 18%;
+    margin-right: 18%;
+    border-radius: .25rem;
+    border: 5px solid black;
+}
+
+.form-control{
+    color: #f9d65b;
+}
+
+.editSessionForm_form {
+    display: flex;
+    /* max-width: 75%; */
+    flex-direction: column;
+    align-items: center;
+    background-color: #3b6a3b;
+    border: 5px solid black;
+    border-radius: .25rem;
+}
+
+
+.editSessionForm_selectText, 
+.editSessionForm__title, 
+.editSessionForm_task,
+.editSessionForm_difficulty,
+.editSessionForm_description,
+.editSessionForm_checkbox {
+    color: #f9d65b;
+    text-shadow: 3px 2px black;
+    font-size: 40px;
+    
+}
+
+
+.select_option{
+    background-color: #d9e9c2;
+    color: black;
+    font-size: 130%;
+}
+
+
+/* ^ form button */
+
+.editSessionForm_saveButton{
+    max-width: 25%;
+    width: 8rem;
+    height: 2.25rem;
+    background-color: #d9e9c2;
+    border: 2px solid black;
+    border-radius: .25rem;
+    margin: 10px;
+    display: inline-block;
+}

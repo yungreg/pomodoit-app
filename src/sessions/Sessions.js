@@ -2,15 +2,17 @@
 /*
 *todo: move deletebuytton() sessionSections
 *todo: pass in session info as a prop then i'll be able to access it inside SessionSections
-*todo: make the task number display bbecome a link to tak eyou to the edit screen where yoj can edid individual  tasks
+*todo: make the task number display bbecome a link to tak eyou to the edit screen where yoj can edid individual tasks
 */
 
 import { Link } from "react-router-dom";
+import "./Sessions.css"
+
 
 export const SessionSections = ({ id, session, taskType, taskDifficulty, taskDescription, isCompleted }) => {
 
     const deleteButton = () => {
-        return <button onClick={()=>{
+        return <button className="session__btn-delete" onClick={()=>{
             fetch(
                 `http://localhost:8088/userSessions/${session.id}`, { 
                     method: "DELETE"
@@ -18,20 +20,42 @@ export const SessionSections = ({ id, session, taskType, taskDifficulty, taskDes
               )
                 .then(response => response.json)
                 .then(() => {
-                
+                    window.alert("Session successfully deleted. Refresh this page to continue.");
+                   
                 });
-        }} className="session__btn-delete">Delete Session?</button>
+        }} >Delete Session?</button>
 
 }
     
-    return <>
-    <section className="sessionListItem"> 
-    <Link to={`/mySessions/${id}`}> Task Number: {id}</Link><br/>
-    Task Type: {taskType} <br/>
-    Difficulty Level: {taskDifficulty}<br/>
-    Task Description: {taskDescription}<br/>
-    Completed: {isCompleted}<br/> 
-    {deleteButton()}
-    </section>
-   </>
+    return (
+      <>
+        <section className="sessionsList">
+          <ul type="none" className="user_sessionList">
+            <li className="user_sessionListItem">
+              <ul>
+                <li className="user_sessionListTaskNumber">
+                  <Link to={`/mySessions/${id}`}> Task Number: {id}</Link>
+                  <br />
+                </li>
+                <li>
+                  Task Type: {taskType} <br />
+                </li>
+                <li>
+                  Difficulty Level: {taskDifficulty}
+                  <br />
+                </li>
+                <li>
+                  Task Description: {taskDescription} <br />
+                </li>
+                <li>
+                  Completed: {isCompleted}
+                  <br />
+                </li>
+                {deleteButton()}
+              </ul>
+            </li>
+          </ul>
+        </section>
+      </>
+    );
 } 

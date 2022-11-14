@@ -1,0 +1,88 @@
+/* 
+
+*todo: make the background of eth form visible 
+*todo: reposition button with margin
+todo: adjust margin sizes between inputs on the form
+*todo: style the inside of teh select boxes
+*todo: figur e out what you need to move to AppViews.css. that will include the classnames. lol :/
+*/
+
+/* ^form */
+.form-control{
+    margin-top: 10px;
+    background-color: black;
+    border: 3px solid #f9d65b;
+}
+
+.taskForm_container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background-color: #3b6a3b;
+    text-shadow: 3px 2px black;
+    max-width: 75%;
+    margin-left: 18%;
+    margin-right: 18%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    border-radius: .75rem;
+}
+
+
+.taskForm_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #3b6a3b;
+    border: 5px solid black;
+    border-radius: .75rem;
+}
+
+
+.taskForm__titleh2 {
+    color: #07ff41;
+    font-size: 40px;
+    margin: 10px;
+}
+
+.taskForm__titleh3 {
+    color: #07ff41;
+    font-size: 25px;
+    margin: 0px;
+}
+
+.taskForm_selectText {
+    color: #f9d65b;
+    font-size: 25px;
+}
+
+.taskForm_selectText_check {
+    color: #f9d65b;
+    font-size: 130%;
+    background-color: rgb(0, 0, 0);
+    margin-top: 3px;
+    padding: 5px;
+    border: 2px solid #f9d65b;
+    border-radius: .50rem;
+}
+
+
+.select_option{
+    background-color: #3b6a3b;
+    color: #f9d65b;
+    font-size: 130%;
+}
+
+
+/* ^ form button */
+
+.button_savesession{
+    max-width: 25%;
+    width: 8rem;
+    height: 2.25rem;
+    background-color: #d9e9c2;
+    border: 2px solid black;
+    border-radius: .25rem;
+    margin: 10px;
+    display: inline-block;
+}

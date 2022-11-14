@@ -1,7 +1,7 @@
 /*
 *todo: grab the component from Honey Rae's
-todo: refactor component for PomodoIT links
-todo: import navbar css
+*todo: refactor component for PomodoIT links
+*todo: import navbar css
 */
 
 import { Link, useNavigate } from "react-router-dom"
@@ -11,24 +11,30 @@ export const NavBar1 = () => {
     const navigate = useNavigate()
 
     return (
-        <ul className="navbar">
+        <ul className="navbar_list">
             <li className="navbar__item active">
-            
                 <Link className="navbar__link" to="/login">Log In</Link>
-                <Link className="navbar__link" to="/timer"> Timer (logo image here)
+            </li>
+            <li className="navbar__item active">
+                <Link className="navbar__link" to="/timer"> Timer
                 </Link>
+            </li>
+            <li className="navbar__item active">
                 <Link className="navbar__link" to="/mySessions">My Sessions</Link>
+            </li>
 
                
-            </li>
+            
             {
                 localStorage.getItem("pomo_user")
-                    ? <li className="navbar__item navbar__logout">
+                    ? <button className="navbar__item_navbar__logout">
+                        <li>
                         <Link className="navbar__link" to="" onClick={() => {
                             localStorage.removeItem("pomo_user")
                             navigate("/login",)
                         }}>Logout</Link>
                     </li>
+                        </button>
                     : ""
             }
         </ul>

@@ -1,40 +1,38 @@
 /*
-todo: creaste a form component for teh timer page
-todo: imclude input field, two select fields, and one checkbox for the boolean
-todo: fetch teh initial state of userPomos
-todo: match user ids to be able to display only the sessions for eth signed in user //!use user id 1 from users test this!
-todo: create a reset button to make sure the form clears
+*todo: creaste a form component for teh timer page
+*todo: imclude input field, two select fields, and one checkbox for the boolean
+*todo: fetch teh initial state of userPomos
+*todo: match user ids to be able to display only the sessions for eth signed in user 
 */ 
 
 
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
+import "./TaskForm.css"
+
 
 export const TaskForm = () => {
-    /*
-        *TODO: Add the correct default properties to the initial state object
-    */
+    
+    //todo*: Add the correct default properties to the initial state object
+    
     const [taskEntry, setTaskEntry] = useState({
-    //   userId: pomoUserObject.id, //^<-- this comes later for sending to API
       taskDescription: "",
       taskTypeId: 0,
       taskDifficultyId: 0,
       isCompleted: false
     })
     
-    //  TODO*: Use the useNavigate() hook so you can redirect the user back to the timer
+    // todo*: Use the useNavigate() hook so you can redirect the user back to the timer
     const navigate = useNavigate()
 
-    //^ the two lines below are needed to populate a user id when sent to the API for storage
     const localPomoUser = localStorage.getItem("pomo_user")
     const pomoUserObject = JSON.parse(localPomoUser)
 
     
-        // TODO*: Create the object to be saved to the API
-    //! this needs refactoring bfore it can be called:
+        // todo*: Create the object to be saved to the API
+        // todo*: this needs refactoring bfore it can be called: 
     const handleSaveButtonClick = (event) => {
-        // event.preventDefault(); //!removed this to refresh the page on submission
-      //   console.log("YOU DIED");
+        // event.preventDefault(); //^ note to self: removed this to refresh the page on submission
         const userSessionToStoreInAPI = {
           userId: pomoUserObject.id,
           taskDescription: taskEntry.taskDescription,
@@ -45,7 +43,7 @@ export const TaskForm = () => {
         //^ this is the template for info that'll get sent to teh API
 
 
-        //* TODO: Perform the fetch() to POST the object to the API
+        // todo*: Perform the fetch() to POST the object to the API
         return fetch(`http://localhost:8088/userSessions`, {
           method: "POST",
           headers: {
@@ -56,52 +54,19 @@ export const TaskForm = () => {
           .then((res) => res.json())
           .then(() => {
             navigate("/timer");
+            window.alert("Session submitted! Good for you! Self check in time. Can you keep going?")
           });
       };
 
     return (
-        <form className="taskForm">
-        <h2 className="taskForm__title">What do you want to get done?</h2>
-            {/* put two selects here */}
-            <fieldset>
-                <label> Task Difficulty: </label>
-                <select className="form-select-difficulty" onChange={
-                            (changeEvent) => {
-                                const copy = {...taskEntry}
-                                copy.taskDifficultyId = changeEvent.target.value
-                                setTaskEntry(copy)
-                            }
-                        } >
-                <option value="0">How hard is the task?</option>
-                <option value="1">Trivial</option>
-                <option value="2">Easy</option>
-                <option value="3">Medium</option>
-                <option value="4">Hard</option>
-                <option value="5">Extreme</option>
-                </select>
-            </fieldset>
+    <div className="taskForm_container">
 
-            <fieldset>
-                <label> Task Type: </label>
-                <select className="form-select-type"onChange={
-                            (changeEvent) => {
-                                const copy = {...taskEntry}
-                                copy.taskTypeId = changeEvent.target.value
-                                setTaskEntry(copy)
-                            }
-                        } >
-                <option value="0">What sort of task is it?</option>
-                <option value="1">Chores</option>
-                <option value="2">Life</option>
-                <option value="3">Liesure/Self-Care</option>
-                <option value="4">Work</option>
-                <option value="5">Studying</option>
-                </select>
-            </fieldset>
-            
-            <fieldset>
+        <form className="taskForm_form">
+        <h2 className="taskForm__titleh2">Step 1:</h2>
+        <h3 className="taskForm__titleh3">Describe what task you want to focus on:</h3>
+        <fieldset>
                 <div className="form-group">
-                    <label htmlFor="description">Description:</label>
+                    <label className="taskForm_selectText" htmlFor="description">Description:</label>
                     <input
                         required autoFocus
                         type="text"
@@ -117,12 +82,47 @@ export const TaskForm = () => {
                         } />
                 </div>
             </fieldset>
-            {/* check box for completed or not */}
+            <fieldset>
+                <label className="taskForm_selectText"> Task Difficulty: </label>
+                <select className="form-select-difficulty" onChange={
+                            (changeEvent) => {
+                                const copy = {...taskEntry}
+                                copy.taskDifficultyId = changeEvent.target.value
+                                setTaskEntry(copy)
+                            }
+                        } >
+                <option className="select_option" value="0">How hard is the task?</option>
+                <option className="select_option" value="1">Trivial</option>
+                <option className="select_option" value="2">Easy</option>
+                <option className="select_option" value="3">Medium</option>
+                <option className="select_option" value="4">Hard</option>
+                <option className="select_option" value="5">Extreme</option>
+                </select>
+            </fieldset>
+
+            <fieldset>
+                <label className="taskForm_selectText"> Task Type: </label>
+                <select className="form-select-type"onChange={
+                            (changeEvent) => {
+                                const copy = {...taskEntry}
+                                copy.taskTypeId = changeEvent.target.value
+                                setTaskEntry(copy)
+                            }
+                        } >
+                <option className="select_option" value="0">What sort of task is it?</option>
+                <option className="select_option" value="1">Chores</option>
+                <option className="select_option" value="2">Life</option>
+                <option className="select_option" value="3">Liesure/Self-Care</option>
+                <option className="select_option" value="4">Work</option>
+                <option className="select_option" value="5">Studying</option>
+                </select>
+            </fieldset>
+
             <fieldset>
                 <div className="form-group">
-                    <label htmlFor="name">Check if you complete the task!</label>
+                    <h2 className="taskForm__titleh2">Step 3:</h2>
+                    <label className="taskForm_selectText_check" htmlFor="name">Check this box if you complete the task -->></label>
                     <input type="checkbox"
-                        //! <--this onclick may not work. keep an eye on it in CDT 
                         value={taskEntry.isCompleted}
                         onChange={
                             (changeEvent) => {
@@ -132,16 +132,16 @@ export const TaskForm = () => {
                         }} />
                 </div>
             </fieldset>
-            <button className="btn btn-savesession"
+            <button className="button_savesession"
             onClick={
                 (click) =>{
                     handleSaveButtonClick(click) 
-                    //*call me when input form's button post is completed;
                 }
             }>
                 Submit Session & Refresh Timer!
             </button>
 
         </form>
+    </div>
     )
 }

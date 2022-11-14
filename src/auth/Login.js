@@ -4,8 +4,8 @@
 *todo: make sure to reroute soemwhere when the login is successful
 *todo: refactor jsx this app to become PomoDoIt! //!remember classes and tehg second button for the register page
 *todo: make  a button for registering/
-todo: Adjust the class nmames to match teh button for Reegistering
-todo: make sur eto make teh same adjustments for teh register page
+*todo: Adjust the class nmames to match teh button for Reegistering
+*todo: make sure to make the same adjustments for the register page
 */
 
 import React, { useState } from "react"
@@ -31,9 +31,10 @@ export const Login = () => {
                     }))
 
                     navigate("/timer")
+                    window.alert("Welcome in! Sending you to the Timer...")
                 }
                 else {
-                    window.alert("Invalid login! Have you Signed up yet?")
+                    window.alert("Invalid login! Have you registered yet?")
                 }
             })
     }
@@ -41,27 +42,31 @@ export const Login = () => {
     return (
         <main className="container--login">
             <section>
+              <div className="welcome_message">
+                <h1 className="login--h1">Welcome to PomoDoIt!</h1>
+                <h2 className="login--h2">✨PomoDoIt 'til it’s PomoDone!✨</h2>
+              </div>
                 <form className="form--login" onSubmit={handleLogin}>
-                    <h3>Please sign in to get started!</h3>
+                    <h3 className="login--h3">Please sign in below to get started!</h3>
                     <fieldset>
                         <label htmlFor="inputEmail">  </label>
                         <input type="email"
                             value={email}
                             onChange={evt => set(evt.target.value)}
                             className="form-control"
-                            placeholder="Please enter email address you signed up with:"
+                            placeholder="Please enter email address you registered with here:"
                             required autoFocus />
                     </fieldset>
                     <fieldset>
-                        <button type="submit">
+                        <button className="button--login"type="submit">
                             Log in!
                         </button>
                     </fieldset>
                 </form>
             </section>
-            <section className="button--register">
-               <button>
-                <Link to="/register">Not Signed up yet?</Link>
+            <section >
+               <button className="button--register">
+                <Link to="/register">Not Registered Yet?</Link>
                </button>
             </section>
         </main>

@@ -1,0 +1,14 @@
+
+
+.TimerComplete_div {
+    /* display: flex; */
+    background-color: #3b6a3b;
+    border-radius: .75rem;
+    /* justify-content: center; */
+    flex-wrap: nowrap;
+    border: 4px solid black;
+    padding: 1rem;
+    font-size: 30px;
+    margin-left: 35%;
+    margin-right: 35%;
+}

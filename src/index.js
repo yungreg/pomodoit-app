@@ -1,11 +1,9 @@
 /*
 ^note: this page is what's being shown when you start your react app. note the <APP> being shown between the 
-todo: import BroweserRouter an dreplace strict mode w/ that 
+*todo: import BrowserRouter and replace strict mode w/ that 
 ^ Browaser router allows you to use routes
-
 */
 
-import { createRoot } from "react-dom/client"
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';

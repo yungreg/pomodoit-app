@@ -3,8 +3,6 @@
 *todo: refactor the rendering function
 *todo: import AuthorizATION 
 *todo: import NavBaR/ PASS IT IN AS PROP
-todo: add logout route which sends you back to login
-todo: 
 */
 
 import { Register } from "./auth/Register";
@@ -18,11 +16,10 @@ import { Authorized } from "./auth/Authorized";
 
 export const Pomodoit = () => {
 	return <Routes>
-    {/* routed this way so the Navbar toggles the logout option depending on the login status. */}
+		
 		<Route path="/login" element={<><NavBar1/><Login /></>} /> 
 		<Route path="/" element={<><NavBar1/><Login /></>} />
-		<Route path="/register" element={<Register />} />
-		
+		<Route path="/register" element={<><NavBar1/><Register /></>} />
 
 		<Route path="*" element={
 			

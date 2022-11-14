@@ -5,13 +5,13 @@
 *todo: create and pass in the timer //^ so.. timer was just interpolated directly here after being imported from theNPM library. doesn't seem elegant.. but it does work predictably!
 */
 import { Login } from "../auth/Login"
-import { Register } from "../auth/Register"
+
 import { UserSessionsList } from "../sessions/UserSessionsList"
 import { TaskForm } from "../taskform/TaskForm"
 import { EditSessionsForm } from "../sessions/SessionEditor"
 import { Route, Routes, Outlet } from "react-router-dom"
-import Timer from "react-compound-timer/build"
-
+import TimerComplete from "../timer/TimerComplete"
+import "./AppViews.css"
 
 export const AppViews = () => {
 	return (
@@ -20,9 +20,9 @@ export const AppViews = () => {
           path="/"
           element={
             <>
-              <div>
-                <h1>Welcome to PomoDoIt!</h1>
-                <h2>✨PomoDoIt until it’s PomoDone!✨</h2>
+              <div className="container--sitewide_welcome">
+                <h1 className="sitewide_header">Welcome to PomoDoIt!</h1>
+                <h2 className="sitewide_subheader">✨PomoDoIt until it’s PomoDone!✨</h2>
               </div>
   
               <Outlet />
@@ -34,26 +34,13 @@ export const AppViews = () => {
 		    <Route path="/" element={<><Login /></>} />
         <Route path="mySessions" element={ <UserSessionsList/> } />
 
-		    {/* teh code below is very weird but works..? there has to be a better solution than this. */}
-        <Route path="/timer" element={<><Timer initialTime={1500000} startImmediately={false}
-        direction={"backward"}
-      
-    >
-        {({ start, pause, reset }) => (
-            <>
-                <div className='timer_countdown'>
-                  <h4>Session time remaining:</h4>
-                    <Timer.Minutes /> minutes
-                    <Timer.Seconds /> seconds
-                </div>
-                <div className='timer_countdown'>
-                    <button onClick={start}>Start or Resume timer!</button>
-                    <button onClick={pause}>Pause Timer!</button>
-                    <button onClick={reset}>Reset Timer!</button>
-                </div>
-            </>
-        )}
-    </Timer><TaskForm /></>} />
+        
+        <Route path="/timer" element={
+        <>
+          <TaskForm />
+          <TimerComplete />
+        </>} />
+
 		    <Route path="/mySessions" element={<><UserSessionsList/> </>} />
 		    <Route path="/mySessions/:id" element={<EditSessionsForm />} />
         </Route>

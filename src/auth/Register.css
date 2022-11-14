@@ -1,0 +1,47 @@
+/*
+todo: add styling to Register page
+todo: use the login page as reference 
+*/
+
+/* ^form */
+.register--headline {
+    color: #f9d65b;
+    padding-top: 2em;
+}
+
+.register--login {
+    display: inline-block;
+    margin: 0 auto;
+    text-align: left;
+    background-color: #3b6a3b;
+    min-height: 12rem;
+    min-width: 30rem;
+    border: 5px dashed #d9e9c2;
+    padding: 20px;
+    margin: 1rem;
+    width: 10px;
+    height: 10px;
+}
+
+.register--loginForm > fieldset > input[type="email"] {
+    border: 3px #9dae84 dashed;
+    width: 25em;
+    text-align: center;
+}
+
+.register--loginForm > fieldset > input[type="text"] {
+    border: 3px #9dae84 dashed;
+    width: 25em;
+    text-align: center;
+}
+
+/* ^button */
+.button--register {
+    width: 12rem;
+    height: 2.25rem;
+    background-color: #d9e9c2;
+    border: 3px solid black;
+    border-radius: .75rem;
+    display: inline-block; 
+    margin: 1rem;
+}

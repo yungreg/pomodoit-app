@@ -1,20 +1,28 @@
 /*
 *todo: import CSS from Honey' Rae's login
-todo: refactor import to make it more personal
-!remember tweh button for registeriong. style it 
+*todo: refactor import to make it more personal
+!remember the button for registeriong. style it 
+todo: 
 */
-
+/* ^text */
 .h1, h1 {
     font-size: 2.5rem;
+    color: #f9d65b;
 }
 
+h2, .login--h3  {
+    color: #f9d65b;
+    margin: 0px;
+}
+
+/*!note to self: element stylings apply to all the elements with teh same name  */
 fieldset {
     min-width: 0;
     padding: 1rem 0;
-    margin: 0;
     border: 0;
 }
 
+/* ^forms */
 .form--login {
     display: inline-block;
     margin: 0 auto;
@@ -22,26 +30,23 @@ fieldset {
 }
 
 .form--login > fieldset > input[type="email"] {
+    border: 3px #9dae84 dashed;
     width: 25em;
+    text-align: center;
 }
 
-.label--login {
-    width: 8rem;
-    display: inline-block;
-}
 
 .form-control {
-    display: block;
     width: 94%;
     height: calc(1.5em + .75rem + 2px);
     padding: .375rem .75rem;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
-    color: #495057;
-    background-color: #fff;
+    color: #000000;
+    background-color: #f9d65b;
     background-clip: padding-box;
-    border: 1px solid #ced4da;
+    border: 1px solid #878c91;
     border-radius: .25rem;
     -webkit-transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
     transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
@@ -49,19 +54,42 @@ fieldset {
 
 .container--login {
     text-align: center;
+    background-color: #3b6a3b
 }
 
 .form--login {
+    text-align: center;
     background-position-x: right;
     z-index: 1;
-    min-height: 25rem;
-    min-width: 45rem;
-    background-color: hsla(0,0%,100%,0.40);
+    min-height: 12rem;
+    min-width: 30rem;
+    background-color: #3b6a3b;
     background-blend-mode: overlay;
     background-repeat: no-repeat;
+    border-radius: 25px;
+    border: 5px dashed #d9e9c2;
+    padding: 20px;
+    margin: 1rem;
+    width: 10px;
+    height: 10px;
 }
 
-.button--close {
-    position: relative;
-    bottom: -2rem;
+/* ^buttons */
+.button--login {
+    width: 8rem;
+    height: 2.25rem;
+    background-color: #d9e9c2;
+    border: 3px solid black;
+    border-radius: .75rem;
+
+}
+
+.button--registerPage {
+    width: 12rem;
+    height: 2.25rem;
+    background-color: #f9d65b;
+    border: 3px solid black;
+    border-radius: .75rem;
+    display: inline-block; 
+    margin: 2rem;
 }

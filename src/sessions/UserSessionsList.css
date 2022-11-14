@@ -1,4 +1,7 @@
-.session__btn-delete {
-    background-color: aqua;
-    margin-left: auto;
+.sessionsList{
+    display: flex;
+}
+
+.user_sessionListTaskNumber{
+    font-size: 24px;
 }
