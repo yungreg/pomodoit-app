@@ -52,8 +52,11 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
  
  
 ## PomoDoIt Intended Usage:
+## **[Watch this app walkthrough that follows the steps below](https://www.youtube.com/watch?v=A8ErLGWZHAY)**
 
-==[Watch this app walkthrough that follows the steps below](https://www.youtube.com/watch?v=A8ErLGWZHAY)==
+
+https://user-images.githubusercontent.com/99050809/202034724-e3c3e053-ee72-4cc8-a18d-ad607fea1a90.mp4
+
 
 1. Now that PomooDoIt is launched, you should be presented with this login page.
  
@@ -67,7 +70,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
  
 6. at any point, you can log out via the Logout link on screen, and be redirected to the Login page.
  
-==Thank you for using PomoDoRo! :smile:==
+Thank you for using PomoDoIt! :smile:
  
 ## Challenges & Lessons Learned During Production  
  
