@@ -13,7 +13,7 @@ Remember:✨PomoDoIt until it’s PomoDone!✨
  
  
 ## How I made PomoDoIt:
-PomoDoIt was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), and styled with Vanilla CSS.
+PomoDoIt was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), and styled with Vanilla CSS & Styled Components.
  
  
 ## How To Run PomoDoIt:
