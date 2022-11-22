@@ -14,6 +14,27 @@ Remember:✨PomoDoIt until it’s PomoDone!✨
  
 ## PomoDoIt was created using:
 [![My Skills](https://skillicons.dev/icons?i=html,css,js,git,github,nodejs,react,jquery,figma,vscode&theme=light)](https://skillicons.dev)
+  
+## PomoDoIt Intended Usage:
+## **[Watch this app walkthrough that follows the steps below](https://www.youtube.com/watch?v=1DSOPkE4Cng)**
+
+
+https://user-images.githubusercontent.com/99050809/202034724-e3c3e053-ee72-4cc8-a18d-ad607fea1a90.mp4
+
+
+1. Now that PomooDoIt is launched, you should be presented with this login page.
+ 
+2. If you are registered already, you can log in using the email you used to register. If you aren't registered, hit the register button beneath the login form, and you'll be redirected there to register with your name and email.
+ 
+3. Once logged in, you will see a timer and an input form. I intend for the user to fill in the form to set the intention for that pomodoro block, and **THEN** start the timer. At that point, begin your task. If you need to step away during a session, you can Pause and resume the timer.
+ 
+ 4. When you reach the end of the timer, you can then review the intended task(s), and check the checkbox at the bottom if you completed your task(s). Submit your task to your database, and you can then start over.
+ 
+ 5. If you'd like to review or edit your saved tasks, tap the MySessions link, and you'll be taken to a list of all of your saved sessions. If you'd like to edit the details of the sessions, you can click the Task Number at the top of each entry, and you'll be able to edit the details. If you'd like to remove the entry, hit the “Delete Session” button on the session you want to delete.
+ 
+6. at any point, you can log out via the Logout link on screen, and be redirected to the Login page.
+ 
+Thank you for using PomoDoIt! :smile:
  
 ## How To Run PomoDoIt:
  
@@ -48,28 +69,7 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
  
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
- 
- 
-## PomoDoIt Intended Usage:
-## **[Watch this app walkthrough that follows the steps below](https://www.youtube.com/watch?v=A8ErLGWZHAY)**
-
-
-https://user-images.githubusercontent.com/99050809/202034724-e3c3e053-ee72-4cc8-a18d-ad607fea1a90.mp4
-
-
-1. Now that PomooDoIt is launched, you should be presented with this login page.
- 
-2. If you are registered already, you can log in using the email you used to register. If you aren't registered, hit the register button beneath the login form, and you'll be redirected there to register with your name and email.
- 
-3. Once logged in, you will see a timer and an input form. I intend for the user to fill in the form to set the intention for that pomodoro block, and **THEN** start the timer. At that point, begin your task. If you need to step away during a session, you can Pause and resume the timer.
- 
- 4. When you reach the end of the timer, you can then review the intended task(s), and check the checkbox at the bottom if you completed your task(s). Submit your task to your database, and you can then start over.
- 
- 5. If you'd like to review or edit your saved tasks, tap the MySessions link, and you'll be taken to a list of all of your saved sessions. If you'd like to edit the details of the sessions, you can click the Task Number at the top of each entry, and you'll be able to edit the details. If you'd like to remove the entry, hit the “Delete Session” button on the session you want to delete.
- 
-6. at any point, you can log out via the Logout link on screen, and be redirected to the Login page.
- 
-Thank you for using PomoDoIt! :smile:
+  
  
 ## Challenges & Lessons Learned During Production  
  
@@ -78,12 +78,11 @@ Thank you for using PomoDoIt! :smile:
  
 2. Celebrate your accomplishments *as they happen*. This may seem like wasted time to take 5 minutes after you implement a feature to congratulate yourself somehow, but that encouragement will snowball, and become motivation when you get stuck (which will likely happen).
  
-3. This may seem obvious, but make sure to finish the Front-End coursework before starting your capstone. I wasn't able to do so, and started the project and predictably met issues I couldn't solve (specifically promises in fetch calls, Props hooks) in React because I hadn't *fully* completed HoneyRae's Repairs. Once I went back and did that,
+3. Pace yourself. Try to be reasonable about how much you can get done each day (again, planning). Rest when you need it and stay hydrated.
  
-4. Pace yourself. Try to be reasonable about how much you can get done each day (again, planning). Rest when you need it and stay hydrated.
- 
-5. Lean on classmates, even those from other cohorts. Their perspectives can help, and yours can potentially help them
-Be nice. This is all quite hard, honestly. lol
+4. Lean on teammates, within reason. Their perspectives can help, and yours can potentially help them.
+
+5. Be nice. This is all quite hard, honestly. lol
  
 ### Challenges
 1. Being specific in asking questions. I find it's difficult for people to answer questions they can't understand
