@@ -26,7 +26,7 @@ https://user-images.githubusercontent.com/99050809/202034724-e3c3e053-ee72-4cc8-
  
 2. If you are registered already, you can log in using the email you used to register. If you aren't registered, hit the register button beneath the login form, and you'll be redirected there to register with your name and email.
  
-3. Once logged in, you will see a timer and an input form. I intend for the user to fill in the form to set the intention for that pomodoro block, and **THEN** start the timer. At that point, begin your task. If you need to step away during a session, you can Pause and resume the timer.
+3. Once logged in, you will see a timer and an input form. I intend for the user to fill in the form to set the intention for that pomodoro block, and **THEN** start the timer. At that point, begin your task. 
  
  4. When you reach the end of the timer, you can then review the intended task(s), and check the checkbox at the bottom if you completed your task(s). Submit your task to your database, and you can then start over.
  
