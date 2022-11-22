@@ -13,8 +13,8 @@ Remember:✨PomoDoIt until it’s PomoDone!✨
  
  
 ## How I made PomoDoIt:
-PomoDoIt was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), and styled with Vanilla CSS & Styled Components.
- 
+PomoDoIt was madse using the following technologies:
+[![My Skills](https://skillicons.dev/icons?i=html,css,js,git,github,nodejs,react,jquery,figma,vscode&theme=light)](https://skillicons.dev)
  
 ## How To Run PomoDoIt:
  
