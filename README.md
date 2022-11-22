@@ -12,8 +12,7 @@ Welcome to PomoDoIt! PomoDoIt is an app that uses the Pomodoro Technique for tim
 Remember:✨PomoDoIt until it’s PomoDone!✨
  
  
-## How I made PomoDoIt:
-PomoDoIt was madse using the following technologies:
+## PomoDoIt was created using:
 [![My Skills](https://skillicons.dev/icons?i=html,css,js,git,github,nodejs,react,jquery,figma,vscode&theme=light)](https://skillicons.dev)
  
 ## How To Run PomoDoIt:
@@ -24,7 +23,7 @@ todo: make sure to
 ^ASSUMING YOU HAVE THE npm INSTALLED: serve the API first, then the NPM start
  -->
  
-### downloads
+### Downloads
 1. Make sure you have the latest NPM installed. I don’t know if this will work with YARN, so use NPM.
  
 2. Make sure you download both the [PomoDoIt project directory](https://github.com/yungreg/pomodoit-app) **AND** the [PomoDoIt API](https://github.com/yungreg/pomodoit-api).
